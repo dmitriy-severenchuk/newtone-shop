@@ -1,0 +1,208 @@
+.header {
+  width: 100%;
+  background-color: #2d2d2d;
+}
+.header__inner {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 20px 0;
+}
+.header__logo {
+  margin-right: 70px;
+  &-img {
+    width: 200px;
+    display: block;
+  }
+}
+.header__search {
+  width: 100%;
+  display: flex;
+  &-input {
+    font-family: 'Roboto-Regular';
+    height: 50px;
+    width: 100%;
+    max-width: 650px;
+    border: none;
+    outline: none;
+    background-color: #434343;
+    color: #ffff;
+    font-size: 16px;
+    line-height: 1;
+    padding: 0 15px;
+    &::placeholder {
+      color: #969696;
+    }
+  }
+  &-icon {
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    background-color: #434343;
+    border: none;
+    transition: all ease 0.1s;
+    position: relative;
+    &:hover {
+      background-color: #535353;
+    }
+    &:after {
+      content: '';
+      display: block;
+      height: 22px;
+      width: 22px;
+      background: url(./assets/images/Header/loupe.svg) no-repeat center;
+      background-size: contain;
+      position: absolute;
+      top: calc(50% - 11px);
+      left: calc(50% - 11px);
+      z-index: 1;
+    }
+  }
+}
+.header__controls {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  letter-spacing: 0.06em;
+  font-weight: 700;
+  color: #fff;
+  margin-left: auto;
+  &__icon {
+    display: block;
+    height: 26px;
+    width: 26px;
+    border-radius: 50%;
+    transition: all ease 0.1s;
+    position: relative;
+    margin-left: 40px;
+    padding-bottom: 20px;
+    &-counter {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Raleway-Regular';
+      width: 19px;
+      height: 19px;
+      border-radius: 50%;
+      font-size: 11px;
+      line-height: 0;
+      text-decoration: none;
+      background-color: #616677;
+      color: #ffff;
+      position: absolute;
+      top: -7px;
+      right: -9px;
+      z-index: 3;
+    }
+    &-user {
+      &:after {
+        content: '';
+        display: block;
+        height: 26px;
+        width: 26px;
+        background: url(./assets/images/Header/user.svg) no-repeat center;
+        background-size: contain;
+        position: absolute;
+        top: calc(50% - 13px);
+        left: calc(50% - 13px);
+        z-index: 1;
+      }
+    }
+    &-favourite {
+      &:after {
+        content: '';
+        display: block;
+        height: 26px;
+        width: 26px;
+        background: url(./assets/images/Header/heart.svg) no-repeat center;
+        background-size: contain;
+        position: absolute;
+        top: calc(50% - 13px);
+        left: calc(50% - 13px);
+        z-index: 1;
+      }
+    }
+    &-cart {
+      &:after {
+        content: '';
+        display: block;
+        height: 26px;
+        width: 26px;
+        background: url(./assets/images/Header/cart.svg) no-repeat center;
+        background-size: contain;
+        position: absolute;
+        top: calc(50% - 13px);
+        left: calc(50% - 13px);
+        z-index: 1;
+      }
+    }
+  }
+  &__total-price {
+    margin-left: 15px;
+  }
+}
+
+//Header-Footer ======
+
+.header__footer {
+  width: 100%;
+  padding: 15px 0 20px;
+}
+.header__footer-menu {
+  display: inline;
+  position: relative;
+  margin-right: 25px;
+  &:hover {
+    padding: 0 0 20px 15px;
+    margin-left: -15px;
+  }
+  &:hover &__content {
+    display: block;
+  }
+  &__title {
+    width: 100%;
+    text-decoration: none;
+    color: #fff;
+    font-weight: 400;
+    font-size: 16px;
+    letter-spacing: 0.05em;
+    &:hover {
+      color: #b0b0b1;
+    }
+    &-icon {
+      margin-left: 5px;
+    }
+  }
+  &__content {
+    min-width: 170px;
+    max-width: 200px;
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 2;
+    &__main {
+      background-color: #2d2d2d;
+      border: 1px solid #585858;
+      padding: 10px 10px;
+      &__item {
+        text-decoration: none;
+        list-style: none;
+        letter-spacing: 0.03em;
+        font-weight: 300;
+        margin: 10px 0;
+        &-link {
+          display: inline-block;
+          text-decoration: none;
+          color: #fff;
+          line-height: 1.2;
+          padding: 2px 5px;
+          font-weight: 300;
+          &:hover {
+            color: #b0b0b1;
+          }
+        }
+      }
+    }
+  }
+}

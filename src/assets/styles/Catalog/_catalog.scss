@@ -1,0 +1,28 @@
+.catalog__wrapper{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.catalog__inner{
+    text-align: center;
+    margin-bottom: 200px;
+}
+.catalog__title{
+    text-align: center;
+    font-family: 'Jost-SemiBold';
+    font-weight: 400;
+    font-size: 1.5em;
+}
+.catalog__subtitle{
+    text-align: center;
+    font-family: 'Roboto-Light';
+    font-weight: 300;
+    font-size: 1em;
+    padding: 10px 0 40px;
+}
+
+@import 'card';
+@import 'swiper';
+
+

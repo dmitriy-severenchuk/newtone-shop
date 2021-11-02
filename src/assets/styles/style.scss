@@ -1,0 +1,41 @@
+@import 'fonts';
+
+body {
+  font-family: 'Roboto-Regular';
+  background-color: #ffff;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 100%;
+  max-width: 1430px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+ul,
+li {
+  margin: 0;
+}
+
+@import 'variables';
+@import 'header';
+@import 'main-page';
+@import 'Catalog/catalog';
+

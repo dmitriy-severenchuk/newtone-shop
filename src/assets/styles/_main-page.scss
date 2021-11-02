@@ -1,0 +1,112 @@
+.page {
+  width: 100%;
+  background-color: #fff;
+}
+.page__inner {
+  width: 100%;
+  padding-top: 2.5rem;
+}
+.page__intro {
+  width: 100%;
+}
+.page__intro__box {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  &__link {
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    width: 50%;
+    position: relative;
+    &:first-child {
+      margin-right: 2rem;
+    }
+    &-img {
+      width: 100%;
+      display: block;
+      object-fit: cover;
+    }
+    &-content {
+      font-family: 'Jost-Black';
+      text-align: center;
+      min-width: 100%;
+      color: rgb(49, 49, 49);
+      background-color: #fff;
+      font-size: 4.5em;
+      font-weight: 700;
+      line-height: 1.1em;
+      padding: 8px 15px;
+      position: absolute;
+      top: calc(50% - 0.65em);
+    }
+  }
+}
+.page__intro__categories {
+  width: 100%;
+  display: flex;
+  margin-top: 4.5rem;
+  padding-bottom: 10rem;
+  &__item {
+    text-decoration: none;
+    width: 25%;
+    min-width: 320px;
+    margin-right: 2rem;
+    &:last-child {
+      margin-right: 0;
+    }
+    &:hover &-img__wrapper:after{
+        opacity: 1;
+    }
+    &-img {
+      width: 100%;
+      object-fit: cover;
+      transform: translate(0, -2%);
+      &__wrapper {
+        height: 470px;
+        width: 100%;
+        overflow: hidden;
+        position: relative;
+        &:after{
+            display: block;
+            content: '';
+            width: 100%;
+            background: linear-gradient(45deg, #ffffffad, transparent);
+            opacity: 0;
+            transition: opacity ease .3s;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+        }
+      }
+    }
+    &-title {
+      width: 100%;
+      text-align: center;
+      background-color: #fff;
+      color: rgb(41, 41, 41);
+      font-size: 1em;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      padding: 15px;
+      &__icon{
+          width: 100%;
+          display: block;
+          position: relative;
+          margin-top: 10px;
+        &:after{
+            display: block;
+            content: '';
+            width: 14px;
+            height: 14px;
+            background: url(./assets/images/next.svg) no-repeat center;
+            background-size: contain;
+            position: absolute;
+            left: calc(50% - 7px);
+        }
+      }
+    }
+  }
+}
