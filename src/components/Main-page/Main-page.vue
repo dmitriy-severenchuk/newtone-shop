@@ -3,7 +3,7 @@
     <div class="container">
       <div class="page__inner">
         <div class="page__intro">
-          <div class="page__intro__box">
+          <!-- <div class="page__intro__box">
             <a href="#" class="page__intro__box__link"
               ><img
                 src="@/assets/images/women.webp"
@@ -18,7 +18,7 @@
               />
               <span class="page__intro__box__link-content">Мужское</span>
             </a>
-          </div>
+          </div> -->
           <div class="page__intro__categories">
             <a href="#" class="page__intro__categories__item">
               <div class="page__intro__categories__item-img__wrapper">
