@@ -88,22 +88,20 @@
 </template>
 
 <script>
-
 import Catalog from '@/components/Catalog/Catalog';
 export default {
+  components: {
+    Catalog,
+  },
+
   data() {
     return {
-     
       categories: [
         { name: 'Все', value: 'all' },
         { name: 'Мужские', value: 'м' },
         { name: 'Женские', value: 'ж' },
       ],
     };
-  },
- 
-  components: {
-    Catalog,
   },
 };
 </script>

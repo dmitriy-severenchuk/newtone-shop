@@ -4,4 +4,3 @@ import 'swiper/components/navigation/navigation.min.css';
 import 'swiper/components/pagination/pagination.min.css';
 import 'swiper';
 Swiper.use([Navigation, Pagination]);
-export default {}
