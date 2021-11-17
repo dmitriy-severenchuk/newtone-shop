@@ -36,7 +36,7 @@
         <div class="header__footer-menu">
           <a href="#" class="header__footer-menu__title"
             >Женщины<span class="header__footer-menu__title-icon"
-              ><fa icon="caret-down" /></span
+              ><fa icon="caret-down"/></span
           ></a>
           <div class="header__footer-menu__content">
             <ul class="header__footer-menu__content__main">
@@ -74,7 +74,7 @@
         <div class="header__footer-menu">
           <a href="#" class="header__footer-menu__title"
             >Мужчины<span class="header__footer-menu__title-icon"
-              ><fa icon="caret-down" /></span
+              ><fa icon="caret-down"/></span
           ></a>
           <div class="header__footer-menu__content">
             <ul class="header__footer-menu__content__main">

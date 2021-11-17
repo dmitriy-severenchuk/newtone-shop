@@ -1,7 +1,7 @@
 <template>
   <div class="select">
     <h5 class="select__title" @click="areOptionsVisible = !areOptionsVisible">
-      Выбрать Категорию 
+      Выбрать Категорию
       <span class="select__title-icon"><fa icon="caret-down"/></span>
     </h5>
     <div class="select__options" v-if="areOptionsVisible">
@@ -33,14 +33,13 @@ export default {
     },
     selected: {
       type: String,
-      default: ''
-    }
-    
+      default: '',
+    },
   },
   methods: {
     selectOption(option) {
       this.$emit('select', option);
-      this.areOptionsVisible = false
+      this.areOptionsVisible = false;
     },
   },
 };

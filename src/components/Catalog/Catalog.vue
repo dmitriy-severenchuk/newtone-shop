@@ -1,7 +1,11 @@
 <template>
   <div class="catalog">
     <div class="catalog__inner">
-      <Select :selected="selected" :options="categories" @select="sortByCategories" />
+      <Select
+        :selected="selected"
+        :options="categories"
+        @select="sortByCategories"
+      />
       <p></p>
       <h2 class="catalog__title">Женщины</h2>
       <h3 class="catalog__subtitle">Новинки</h3>
@@ -129,7 +133,7 @@ export default {
           category: 'Мужчинам',
           id: 11,
         },
-         {
+        {
           image: 'm2.webp',
           title: 'Футболка тай-дай relaxed fit',
           price: '2290',
@@ -138,7 +142,7 @@ export default {
           category: 'Мужчинам',
           id: 12,
         },
-         {
+        {
           image: 'm3.webp',
           title: 'Хлопковая футболка стрейч',
           price: '1990',
@@ -147,7 +151,7 @@ export default {
           category: 'Мужчинам',
           id: 13,
         },
-         {
+        {
           image: 'm4.webp',
           title: 'Рубашка из фланели в клетку',
           price: '4990',
@@ -156,7 +160,7 @@ export default {
           category: 'Мужчинам',
           id: 14,
         },
-         {
+        {
           image: 'm5.webp',
           title: 'Хлопковая рубашка с терморегуляцией',
           price: '2490',
@@ -165,7 +169,7 @@ export default {
           category: 'Мужчинам',
           id: 15,
         },
-         {
+        {
           image: 'm6.webp',
           title: 'Рубашка relaxed-fit из хлопка',
           price: '4990',
@@ -174,7 +178,7 @@ export default {
           category: 'Мужчинам',
           id: 16,
         },
-         {
+        {
           image: 'm7.webp',
           title: 'Хлопковые брюки в грузовом стиле',
           price: '4990',
@@ -183,7 +187,7 @@ export default {
           category: 'Мужчинам',
           id: 17,
         },
-         {
+        {
           image: 'm8.webp',
           title: 'Непромокаемый тренч из нейлона',
           price: '10790',
@@ -192,7 +196,7 @@ export default {
           category: 'Мужчинам',
           id: 18,
         },
-         {
+        {
           image: 'm9.webp',
           title: 'Однотонные кроссовки из кожи',
           price: '3590',
@@ -201,7 +205,7 @@ export default {
           category: 'Мужчинам',
           id: 19,
         },
-         {
+        {
           image: 'm10.webp',
           title: 'Укороченные брюки-карго из хлопка',
           price: '4490',
@@ -210,7 +214,7 @@ export default {
           category: 'Мужчинам',
           id: 20,
         },
-         {
+        {
           image: 'm11.webp',
           title: 'Брюки-джоггеры из хлопка',
           price: '3990',
@@ -219,7 +223,7 @@ export default {
           category: 'Мужчинам',
           id: 21,
         },
-         {
+        {
           image: 'm12.webp',
           title: 'Стеганая непромокаемая парка с капюшоном',
           price: '12990',
@@ -228,8 +232,6 @@ export default {
           category: 'Мужчинам',
           id: 22,
         },
-
-
       ],
       categories: [
         { name: 'Все', value: 'ALL' },
@@ -247,23 +249,22 @@ export default {
   methods: {
     sortByCategories(category) {
       this.sortedProducts = [];
-      let vm = this;
-      this.products.map(function(item){
-        if(item.category === category.name){
-          vm.sortedProducts.push(item);
+      this.products.map((item) => {
+        if (item.category === category.name) {
+          this.sortedProducts.push(item);
         }
-      })
+      });
     },
   },
   computed: {
-    filteredProducts(){
-      if (this.sortedProducts.length){
-        return this.sortedProducts
-      } else{
-        return this.products
+    filteredProducts() {
+      if (this.sortedProducts.length) {
+        return this.sortedProducts;
+      } else {
+        return this.products;
       }
-    }
-  }
+    },
+  },
 };
 </script>
 

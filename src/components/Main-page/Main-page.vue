@@ -115,6 +115,10 @@
 <script>
 import Catalog from '@/components/Catalog/Catalog';
 export default {
+  components: {
+    Catalog,
+  },
+
   data() {
     return {
       categories: [
@@ -123,10 +127,6 @@ export default {
         { name: 'Женщинам', value: 2 },
       ],
     };
-  },
-
-  components: {
-    Catalog,
   },
 };
 </script>

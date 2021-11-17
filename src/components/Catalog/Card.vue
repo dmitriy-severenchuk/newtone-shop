@@ -18,12 +18,10 @@
         </a>
         <div class="card__content-buttons">
           <a href="#" class="card__content-buttons-link"
-            ><span class="card__content-buttons-item"
-              ><fa icon="heart"/></span>
+            ><span class="card__content-buttons-item"><fa icon="heart"/></span>
           </a>
           <a href="#" class="card__content-buttons-link">
-            <span class="card__content-buttons-item"
-              ><fa icon="eye"/></span>
+            <span class="card__content-buttons-item"><fa icon="eye"/></span>
           </a>
         </div>
         <div class="card__content-footer">
@@ -34,7 +32,7 @@
         </div>
       </div>
     </div>
-    <div class="card__footer" >
+    <div class="card__footer">
       <a href="#" class="card__footer-title">{{ product_data.title }}</a>
       <div class="card__footer-price">
         {{ product_data.price }} ₽
@@ -58,9 +56,7 @@ export default {
   props: {
     product_data: {
       type: Object,
-      default() {
-        return {};
-      },
+      default: () => {},
     },
   },
   methods: {},
