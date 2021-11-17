@@ -16,13 +16,13 @@
   }
 }
 .header__search {
+  max-width: 640px;
   width: 100%;
   display: flex;
   &-input {
     font-family: 'Roboto-Regular';
     height: 50px;
     width: 100%;
-    max-width: 650px;
     border: none;
     outline: none;
     background-color: #434343;

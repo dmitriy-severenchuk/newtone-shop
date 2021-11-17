@@ -1,0 +1,82 @@
+.our-store{
+    width: 100%;
+    color: #333333;
+    margin: 30px 0;
+}
+.our-store__inner{
+    display: flex;
+    justify-content: space-between;
+}
+.our-store__image{
+    width: 50%;
+    height: 400px;
+    background: url(./assets/images/our-store1.webp) center no-repeat;
+}
+.our-store__content{
+    width: 50%;
+    padding-left: 30px;
+}
+.our-store__title{
+    font-size: 24px;
+    font-weight: 900;
+}
+.our-store__text-title{
+    font-weight: 700;
+}
+.our-store__stations{
+    display: flex;
+    margin: 30px 0;
+    &-item{
+        cursor: pointer;
+        color: #999999;
+        font-weight: 700;
+        margin-right: 30px;
+        position: relative;
+        &:after{
+            display: block;
+            content: '';
+            width: 100%;
+            height: 1px;
+            background-color: #333333;
+            opacity: 0;
+            transition: all linear .2s;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+        &_name{
+            transition: all linear .2s;
+        }
+        &:hover:after{
+            opacity: 1;
+        }
+        &:hover &_name{
+            color: #333333;
+        }
+    }
+}
+.our-store__contacts{
+    margin: 30px 0;
+    &-item{
+        margin: 10px 0;
+        &:last-child{
+            margin: 0;
+        }
+    }
+}
+.our-store__map-link{
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    font-size: 14px;
+    color: inherit;
+    &__img{
+        width: 13px;
+        height: 13px;
+        margin-left: 10px;
+    }
+    &:hover{
+        text-decoration: underline;
+    }
+}

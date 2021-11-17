@@ -4,7 +4,7 @@
       <div class="header__inner">
         <div class="header__logo">
           <img
-            src="@/assets/images/Header/logo.svg"
+            src="@/assets/images/logo.svg"
             alt="NEWTONE"
             class="header__logo-img"
           />
