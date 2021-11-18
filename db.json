@@ -1,0 +1,203 @@
+{
+    "products": [
+        {
+            "image": "w1.webp",
+            "title": "Твидовый кардиган из хлопка",
+            "price": "7490",
+            "sale": "",
+            "sale_oldPrice": "",
+            "category": "Женщинам",
+            "id": 1
+          },
+          {
+            "image": "w2.webp",
+            "title": "Объемный водоотталкивающий тренч lorem",
+            "price": "4990",
+            "sale": "50",
+            "sale_oldPrice": "9990",
+            "category": "Женщинам",
+            "id": 2
+          },
+          {
+            "image": "w3.webp",
+            "title": "Жилет из трикотажа в рубчик",
+            "price": "3290",
+            "sale": "",
+            "sale_oldPrice": "",
+            "category": "Женщинам",
+            "id": 3
+          },
+          {
+            "image": "w4.webp",
+            "title": "Хлопковая рубашка в полоску",
+            "price": "3590",
+            "sale": "",
+            "sale_oldPrice": "",
+            "category": "Женщинам",
+            "id": 4
+          },
+          {
+            "image": "w5.webp",
+            "title": "Объемная рубашку в клетку",
+            "price": "3590",
+            "sale": "",
+            "sale_oldPrice": "",
+            "category": "Женщинам",
+            "id": 5
+          },
+          {
+            "image": "w6.webp",
+            "title": "Джинсы с завышеной талией Wideleg",
+            "price": "1690",
+            "sale": "",
+            "sale_oldPrice": "",
+            "category": "Женщинам",
+            "id": 6
+          },
+          {
+            "image": "w7.webp",
+            "title": "Джинсы с завышеной талией Wideleg",
+            "price": "3590",
+            "sale": "",
+            "sale_oldPrice": "",
+            "category": "Женщинам",
+            "id": 7
+          },
+          {
+            "image": "w8.webp",
+            "title": "Кожаные сапоги",
+            "price": "4990",
+            "sale": "",
+            "sale_oldPrice": "",
+            "category": "Женщинам",
+            "id": 8
+          },
+          {
+            "image": "w9.webp",
+            "title": "Хлопковые носки в рубчик",
+            "price": "990",
+            "sale": "",
+            "sale_oldPrice": "",
+            "category": "Женщинам",
+            "id": 9
+          },
+          {
+            "image": "w10.webp",
+            "title": "Джинсовая куртка из хлопка",
+            "price": "3590",
+            "sale": "",
+            "sale_oldPrice": "",
+            "category": "Женщинам",
+            "id": 10
+          },
+  
+          {
+            "image": "m1.webp",
+            "title": "Фактурная трикотажная футболка из хлопка",
+            "price": "2490",
+            "sale": "",
+            "sale_oldPrice": "",
+            "category": "Мужчинам",
+            "id": 11
+          },
+          {
+            "image": "m2.webp",
+            "title": "Футболка тай-дай relaxed fit",
+            "price": "2290",
+            "sale": "",
+            "sale_oldPrice": "",
+            "category": "Мужчинам",
+            "id": 12
+          },
+          {
+            "image": "m3.webp",
+            "title": "Хлопковая футболка стрейч",
+            "price": "1990",
+            "sale": "",
+            "sale_oldPrice": "",
+            "category": "Мужчинам",
+            "id": 13
+          },
+          {
+            "image": "m4.webp",
+            "title": "Рубашка из фланели в клетку",
+            "price": "4990",
+            "sale": "",
+            "sale_oldPrice": "",
+            "category": "Мужчинам",
+            "id": 14
+          },
+          {
+            "image": "m5.webp",
+            "title": "Хлопковая рубашка с терморегуляцией",
+            "price": "2490",
+            "sale": "31",
+            "sale_oldPrice": "3590",
+            "category": "Мужчинам",
+            "id": 15
+          },
+          {
+            "image": "m6.webp",
+            "title": "Рубашка relaxed-fit из хлопка",
+            "price": "4990",
+            "sale": "",
+            "sale_oldPrice": "",
+            "category": "Мужчинам",
+            "id": 16
+          },
+          {
+            "image": "m7.webp",
+            "title": "Хлопковые брюки в грузовом стиле",
+            "price": "4990",
+            "sale": "",
+            "sale_oldPrice": "",
+            "category": "Мужчинам",
+            "id": 17
+          },
+          {
+            "image": "m8.webp",
+            "title": "Непромокаемый тренч из нейлона",
+            "price": "10790",
+            "sale": "10",
+            "sale_oldPrice": "11990",
+            "category": "Мужчинам",
+            "id": 18
+          },
+          {
+            "image": "m9.webp",
+            "title": "Однотонные кроссовки из кожи",
+            "price": "3590",
+            "sale": "28",
+            "sale_oldPrice": "4990",
+            "category": "Мужчинам",
+            "id": 19
+          },
+          {
+            "image": "m10.webp",
+            "title": "Укороченные брюки-карго из хлопка",
+            "price": "4490",
+            "sale": "",
+            "sale_oldPrice": "",
+            "category": "Мужчинам",
+            "id": 20
+          },
+          {
+            "image": "m11.webp",
+            "title": "Брюки-джоггеры из хлопка",
+            "price": "3990",
+            "sale": "",
+            "sale_oldPrice": "",
+            "category": "Мужчинам",
+            "id": 21
+          },
+          {
+            "image": "m12.webp",
+            "title": "Стеганая непромокаемая парка с капюшоном",
+            "price": "12990",
+            "sale": "",
+            "sale_oldPrice": "",
+            "category": "Мужчинам",
+            "id": 22
+          }
+    ]
+}

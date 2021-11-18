@@ -1,5 +1,7 @@
 <template>
+
   <div class="page">
+    
     <div class="container">
       <div class="page__inner">
         <div class="page__intro">
@@ -81,7 +83,6 @@
         <div class="catalog__wrapper">
           <Catalog />
         </div>
-
         <a href="#" class="page__season__sale-link">
           <div class="page__season__sale"></div>
         </a>
@@ -108,15 +109,21 @@
           </div>
         </div>
       </div>
+     
     </div>
+     
   </div>
+  
 </template>
 
 <script>
 import Catalog from '@/components/Catalog/Catalog';
+
+
 export default {
   components: {
     Catalog,
+    
   },
 
   data() {

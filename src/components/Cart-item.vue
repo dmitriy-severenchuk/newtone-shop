@@ -1,19 +1,19 @@
 <template>
-  <div class="card">
+  <div class="cart-item">
     <div class="card__inner">
       <div class="card__content-wrapper">
         <a href="#" class="card__content-link">
           <img
-            :src="require('@/assets/images/Catalog/' + product_data.image)"
+            :src="require('@/assets/images/Catalog/' + cart_item_data.image)"
             alt="cloth"
             class="card__content-item"
           />
           <div
             class="card__content-sale"
             id="cardSale"
-            v-if="this.product_data.sale"
+            v-if="this.cart_item_data.sale"
           >
-            -{{ product_data.sale }}%
+            -{{ cart_item_data.sale }}%
           </div>
         </a>
         <div class="card__content-buttons">
@@ -34,14 +34,14 @@
       </div>
     </div>
     <div class="card__footer">
-      <a href="#" class="card__footer-title">{{ product_data.title }}</a>
+      <a href="#" class="card__footer-title">{{ cart_item_data.title }}</a>
       <div class="card__footer-price">
-        {{ product_data.price }} ₽
+        {{ cart_item_data.price }} ₽
         <span
           class="card__footer-price__sale"
-          v-if="this.product_data.sale_oldPrice"
+          v-if="this.cart_item_data.sale_oldPrice"
         >
-          {{ product_data.sale_oldPrice }} ₽
+          {{ cart_item_data.sale_oldPrice }} ₽
         </span>
       </div>
     </div>
@@ -50,20 +50,16 @@
 
 <script>
 export default {
-  name: 'Card',
-  data() {
-    return {};
-  },
-  props: {
-    product_data: {
-      type: Object,
-      default: () => {},
-    },
-  },
-  methods: {
-    addToCart() {
-      this.$emit('addToCart', this.product_data)
+
+    props: {
+        cart_item_data: {
+            type: Object,
+            default() {
+                return {}
+            }
+        }
     }
-  },
 };
 </script>
+
+<style lang="scss"></style>

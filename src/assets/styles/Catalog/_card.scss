@@ -42,8 +42,12 @@
     top: 8px;
     right: 8px;
     &-link{
+      cursor: pointer;
       display: block;
       text-decoration: none;
+      background-color: transparent;
+      padding: 0;
+      border: none;
       margin-bottom: 12px;
       &:last-child{
         margin-bottom: 0;
