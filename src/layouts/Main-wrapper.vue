@@ -2,6 +2,7 @@
   <div class="main-wrapper">
     <Header />
     <Cart v-if="CART.length" :cart_data="CART" />
+    
     <router-view />
     <Footer />
   </div>

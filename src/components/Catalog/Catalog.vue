@@ -7,7 +7,7 @@
         @select="sortByCategories"
       />
       <p></p>
-      <h2 class="catalog__title">Женщины</h2>
+      <h2 class="catalog__title">{{selected}}</h2>
       <h3 class="catalog__subtitle">Новинки</h3>
       <swiper
         :slides-per-view="5"
@@ -31,7 +31,7 @@ import { mapActions, mapGetters } from 'vuex';
 export default {
   data() {
     return {
-      selected: '',
+      selected: 'Все',
       sortedProducts: [],
       categories: [
         { name: 'Все', value: 'ALL' },
@@ -51,11 +51,14 @@ export default {
     addToCart(data) {
       console.log(data);
     },
+
     sortByCategories(category) {
       this.sortedProducts = [];
+      this.selected = category.name;
+      let vm = this;
       this.PRODUCTS.map((item) => {
         if (item.category === category.name) {
-          this.sortedProducts.push(item);
+          vm.sortedProducts.sort(() => Math.random() - 0.5).push(item);
         }
       });
     },
