@@ -116,6 +116,6 @@
 
 <script>
 export default {
-  name: 'header',
+  name: 'TheHeader',
 };
 </script>

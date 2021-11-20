@@ -1,30 +1,29 @@
 <template>
   <div class="main-wrapper">
-    <Header />
+    <TheHeader />
     <Cart v-if="CART.length" :cart_data="CART" />
-    
     <router-view />
-    <Footer />
+    <TheFooter />
   </div>
 </template>
 
 <script>
-import Header from '@/components/Header/Header';
-import Footer from '@/components/Footer/Footer';
+import TheHeader from '@/components/TheHeader';
+import TheFooter from '@/components/TheFooter';
 import Cart from '@/components/Cart';
-import {mapGetters} from 'vuex'
+import { mapGetters } from 'vuex';
 
 export default {
   components: {
-    Header,
-    Footer,
-    Cart
+    TheHeader,
+    TheFooter,
+    Cart,
   },
+
   computed: {
-    ...mapGetters([
-      'CART'
-    ])
+    ...mapGetters(['CART']),
   },
+
   setup() {},
 };
 </script>
