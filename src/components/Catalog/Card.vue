@@ -3,7 +3,7 @@
     <div class="card__inner">
       <div class="card__content-wrapper">
         <a href="#" class="card__content-link">
-          <img
+            <img
             :src="require('@/assets/images/Catalog/' + product_data.image)"
             alt="cloth"
             class="card__content-item"

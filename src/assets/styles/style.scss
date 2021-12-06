@@ -1,6 +1,8 @@
 @import 'fonts';
 
+html,
 body {
+  height: 100%;
   font-family: 'Roboto-Regular';
   background-color: #ffff;
   margin: 0;
@@ -34,10 +36,24 @@ li {
   margin: 0;
 }
 
+// Прижать футер к низу тест
+
+.main-wrapper__middle-of-page{
+  flex: 1 1 auto;
+}
+
+.main-wrapper{
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+
 @import 'variables';
 @import 'header';
 @import 'main-page';
 @import 'our-store';
 @import 'footer';
 @import 'Catalog/catalog';
+@import 'cart';
 

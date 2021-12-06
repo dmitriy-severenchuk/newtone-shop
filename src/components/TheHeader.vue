@@ -2,13 +2,13 @@
   <header class="header">
     <div class="container">
       <div class="header__inner">
-        <div class="header__logo">
+        <router-link to="/" class="header__logo">
           <img
             src="@/assets/images/logo.svg"
             alt="NEWTONE"
             class="header__logo-img"
           />
-        </div>
+        </router-link>
         <form action="/search" class="header__search">
           <input type="text" class="header__search-input" placeholder="Поиск" />
           <button class="header__search-icon"></button>
@@ -23,12 +23,12 @@
               >0</span
             >
           </a>
-          <a href="#" class="header__controls__icon">
+          <router-link to="/cart" class="header__controls__icon">
             <span class="header__controls__icon-cart"></span>
             <span class="header__controls__icon-counter" id="cartItemsCounter"
               >0</span
             >
-          </a>
+          </router-link>
           <span class="header__controls__total-price">0.00 ₽</span>
         </div>
       </div>
@@ -106,12 +106,14 @@
                   >Аксессуары</a
                 >
               </li>
+              
             </ul>
           </div>
         </div>
       </div>
     </div>
   </header>
+  
 </template>
 
 <script>

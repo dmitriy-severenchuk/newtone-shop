@@ -1,8 +1,7 @@
 <template>
   <div class="main-wrapper">
     <TheHeader />
-    <Cart v-if="CART.length" :cart_data="CART" />
-    <router-view />
+    <router-view class="main-wrapper__middle-of-page" />
     <TheFooter />
   </div>
 </template>
@@ -10,14 +9,13 @@
 <script>
 import TheHeader from '@/components/TheHeader';
 import TheFooter from '@/components/TheFooter';
-import Cart from '@/components/Cart';
+
 import { mapGetters } from 'vuex';
 
 export default {
   components: {
     TheHeader,
     TheFooter,
-    Cart,
   },
 
   computed: {

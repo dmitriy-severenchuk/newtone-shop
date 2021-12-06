@@ -12,7 +12,7 @@ export default {
     },
     CART(state) {
       return state.cart;
-    },
+    }
   },
 
   actions: {
@@ -24,9 +24,9 @@ export default {
         return products;
       });
     },
-    ADD_TO_CART({ commit }, product) {
+    ADD_TO_CART({commit}, product) {
       commit('SET_CART', product);
-    },
+    }
   },
 
   mutations: {
@@ -35,6 +35,7 @@ export default {
     },
     SET_CART: (state, product) => {
       state.cart.push(product);
-    },
+    }
+   
   },
 };

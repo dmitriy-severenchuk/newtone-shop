@@ -7,7 +7,7 @@
         @select="sortByCategories"
       />
       <p></p>
-      <h2 class="catalog__title">{{selected}}</h2>
+      <h2 class="catalog__title">{{ selected }}</h2>
       <h3 class="catalog__subtitle">Новинки</h3>
       <swiper
         :slides-per-view="5"
@@ -49,7 +49,7 @@ export default {
   methods: {
     ...mapActions(['GET_PRODUCTS_FROM_API', 'ADD_TO_CART']),
     addToCart(data) {
-      console.log(data);
+      this.ADD_TO_CART(data)
     },
 
     sortByCategories(category) {
