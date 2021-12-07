@@ -2,7 +2,7 @@
   <div class="cart-item">
     <div class="cart__image__wrapper">
       <img
-        :src="require('@/assets/images/Catalog/' + cart-item-data.image)"
+        :src="require('@/assets/images/Catalog/' + cartItemData.image)"
         alt="cloth"
         class="card__content-item"
       />
@@ -13,7 +13,7 @@
 <script>
 export default {
   props: {
-    'cart-item-data': {
+    cartItemData: {
       type: Object,
       default() {
         return {};

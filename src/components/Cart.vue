@@ -5,7 +5,7 @@
       <div class="cart__inner">
         <CartItem 
         v-for="item in cartData" :key="item.article"
-        :cart-item-data="item"
+        :cartItemData="item"
          />
       </div>
     </div>
