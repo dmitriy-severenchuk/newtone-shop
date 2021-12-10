@@ -17,7 +17,7 @@
         <div class="cart-item__counter">
           <div class="cart-item__counter__wrapper">
             <button class="cart-item__counter__button">-</button>
-            <span class="cart-item__counter__quantity">{{quantity}} </span>
+            <span class="cart-item__counter__quantity">{{cartItemData.quantity}} </span>
             <button class="cart-item__counter__button">+</button>
           </div>
         </div>
@@ -45,15 +45,17 @@ export default {
     },
   },
   methods: {
-    showQuantity() {
-      console.log(this.cartItemData.quantity);
-    },
+    
   },
   // computed: {
   //   quantity() {
   //     return this.$store.getters.PRODUCT_QUANTITY(this.product);
   //   },
   // },
+  mounted() {
+    this.$store.dispatch('addToCart', {...this.product, quantity: this.quantity})
+    console.log(this.quantity)
+  },
 };
 </script>
 

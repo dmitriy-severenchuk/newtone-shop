@@ -17,14 +17,6 @@ export default {
   },
 
   getters: {
-    // PRODUCT_QUANTITY: (state, product) => {
-    //   const item = state.cart.find(i, i.id === product.id);
-    //   if (item) {
-    //     return item.quantity;
-    //   } else {
-    //     return null;
-    //   }
-    // },
     PRODUCTS(state) {
       return state.products;
     },
@@ -53,14 +45,6 @@ export default {
     },
     SET_TO_CART: (state, product) => {
       state.cart.push(product);
-
-    //   let item = state.cart.find(i => i.id === product.id)
-    //   if(item){
-    //     item.quantity++
-    //   } else {
-    //     state.cart.push({...product, quantity: 1})
-    //   }
-    // },
     }
   },
 };
