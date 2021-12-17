@@ -15,7 +15,9 @@
               >
             </div>
           </div>
-          <div class="footer__contacts__adress">г. Москва, Новорязанская ул., 18, стр. 11</div>
+          <div class="footer__contacts__adress">
+            г. Москва, Новорязанская ул., 18, стр. 11
+          </div>
         </div>
         <div class="footer__logo">
           <a href="#" class="footer__logo-link">
@@ -29,33 +31,69 @@
         <div class="footer__box">
           <div class="footer__socials">
             <a href="#" class="footer__socials-link">
-              <img src="@/assets/images/Footer/telegram.svg" alt="social" class="footer__socials-img">
+              <img
+                src="@/assets/images/Footer/telegram.svg"
+                alt="social"
+                class="footer__socials-img"
+              />
             </a>
-             <a href="#" class="footer__socials-link">
-              <img src="@/assets/images/Footer/instagram.svg" alt="social" class="footer__socials-img">
+            <a href="#" class="footer__socials-link">
+              <img
+                src="@/assets/images/Footer/instagram.svg"
+                alt="social"
+                class="footer__socials-img"
+              />
             </a>
-             <a href="#" class="footer__socials-link">
-              <img src="@/assets/images/Footer/facebook.svg" alt="social" class="footer__socials-img">
+            <a href="#" class="footer__socials-link">
+              <img
+                src="@/assets/images/Footer/facebook.svg"
+                alt="social"
+                class="footer__socials-img"
+              />
             </a>
-             <a href="#" class="footer__socials-link">
-              <img src="@/assets/images/Footer/youtube.svg" alt="social" class="footer__socials-img">
+            <a href="#" class="footer__socials-link">
+              <img
+                src="@/assets/images/Footer/youtube.svg"
+                alt="social"
+                class="footer__socials-img"
+              />
             </a>
-             <a href="#" class="footer__socials-link">
-              <img src="@/assets/images/Footer/vk.svg" alt="social" class="footer__socials-img">
+            <a href="#" class="footer__socials-link">
+              <img
+                src="@/assets/images/Footer/vk.svg"
+                alt="social"
+                class="footer__socials-img"
+              />
             </a>
-             <a href="#" class="footer__socials-link">
-              <img src="@/assets/images/Footer/twitter.svg" alt="social" class="footer__socials-img">
+            <a href="#" class="footer__socials-link">
+              <img
+                src="@/assets/images/Footer/twitter.svg"
+                alt="social"
+                class="footer__socials-img"
+              />
             </a>
           </div>
           <div class="footer__payment">
-             <a href="#" class="footer__payment-link">
-              <img src="@/assets/images/Footer/mastercard.svg" alt="payment" class="footer__payment-img">
+            <a href="#" class="footer__payment-link">
+              <img
+                src="@/assets/images/Footer/mastercard.svg"
+                alt="payment"
+                class="footer__payment-img"
+              />
             </a>
-             <a href="#" class="footer__payment-link">
-              <img src="@/assets/images/Footer/visa.svg" alt="payment" class="footer__payment-img">
+            <a href="#" class="footer__payment-link">
+              <img
+                src="@/assets/images/Footer/visa.svg"
+                alt="payment"
+                class="footer__payment-img"
+              />
             </a>
-             <a href="#" class="footer__payment-link">
-              <img src="@/assets/images/Footer/mir.svg" alt="payment" class="footer__payment-img">
+            <a href="#" class="footer__payment-link">
+              <img
+                src="@/assets/images/Footer/mir.svg"
+                alt="payment"
+                class="footer__payment-img"
+              />
             </a>
           </div>
         </div>
@@ -65,11 +103,7 @@
 </template>
 
 <script>
-export default {
-  data() {
-    return {};
-  },
-};
+export default {};
 </script>
 
 <style lang="scss"></style>

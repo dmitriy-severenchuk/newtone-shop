@@ -39,9 +39,7 @@ export default {
   props: {
     cartItemData: {
       type: Object,
-      default() {
-        return {};
-      },
+      default: () => {},
     },
   },
   methods: {
@@ -53,8 +51,7 @@ export default {
   //   },
   // },
   mounted() {
-    this.$store.dispatch('addToCart', {...this.product, quantity: this.quantity})
-    console.log(this.quantity)
+    // this.$store.dispatch('addToCart', {...this.product, quantity: this.quantity})
   },
 };
 </script>

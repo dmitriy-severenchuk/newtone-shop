@@ -1,5 +1,5 @@
 <template>
-  <div class="catalog">
+  <div class="catalog" v-if="filteredProducts.length">
     <div class="catalog__inner">
       <Select
         :selected="selected"
@@ -48,6 +48,7 @@ export default {
   },
   methods: {
     ...mapActions(['GET_PRODUCTS_FROM_API', 'ADD_TO_CART']),
+
     addToCart(data) {
       this.ADD_TO_CART(data);
       console.log(data)
@@ -56,16 +57,16 @@ export default {
     sortByCategories(category) {
       this.sortedProducts = [];
       this.selected = category.name;
-      let vm = this;
       this.PRODUCTS.map((item) => {
         if (item.category === category.name) {
-          vm.sortedProducts.sort(() => Math.random() - 0.5).push(item);
+          this.sortedProducts.sort(() => Math.random() - 0.5).push(item);
         }
       });
     },
   },
   computed: {
     ...mapGetters(['PRODUCTS']),
+
     filteredProducts() {
       if (this.sortedProducts.length) {
         return this.sortedProducts;

@@ -135,15 +135,5 @@ export default {
   components: {
     Catalog,
   },
-
-  data() {
-    return {
-      categories: [
-        { name: 'Все', value: 'ALL' },
-        { name: 'Мужчинам', value: 1 },
-        { name: 'Женщинам', value: 2 },
-      ],
-    };
-  },
 };
 </script>

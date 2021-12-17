@@ -3,10 +3,11 @@
     <div class="container">
       <h2 class="cart__title">Корзина</h2>
       <div class="cart__inner">
-        <CartItem 
-        v-for="item in cartData" :key="item.article"
-        :cartItemData="item"
-         />
+        <CartItem
+          v-for="item in cartData"
+          :key="item.article"
+          :cartItemData="item"
+        />
       </div>
     </div>
   </div>
@@ -22,9 +23,7 @@ export default {
   props: {
     cartData: {
       type: Array,
-      default() {
-        [];
-      },
+      default: () => [],
     },
   },
 };

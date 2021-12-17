@@ -26,14 +26,19 @@ export default {
   },
 
   actions: {
-    GET_PRODUCTS_FROM_API({ commit }) {
-      return axios('http://localhost:3000/products', {
-        method: 'GET',
-      }).then((products) => {
-        commit('SET_PRODUCTS_TO_STATE', products.data);
-        return products;
-      });
+    async GET_PRODUCTS_FROM_API({ commit }) {
+      try {
+        const { data } = await axios('http://localhost:3000/products', {
+          method: 'GET',
+        });
+
+        commit('SET_PRODUCTS_TO_STATE', data);
+        return data;
+      } catch (e) {
+        console.log(e);
+      }
     },
+
     ADD_TO_CART({ commit }, product) {
       commit('SET_TO_CART', product);
     },
@@ -45,6 +50,6 @@ export default {
     },
     SET_TO_CART: (state, product) => {
       state.cart.push(product);
-    }
+    },
   },
 };

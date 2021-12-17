@@ -1,9 +1,9 @@
 import { createStore } from 'vuex'
 
-import test from './test';
+import products from './products';
 
 export default createStore({
   modules: {
-    test,
+    products,
   }
 })

@@ -1,6 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import MainWrapper from '@/layouts/Main-wrapper';
-// import Cart from '@/components/Cart'
 
 const routes = [
   {
