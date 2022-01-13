@@ -28,12 +28,18 @@ export default {
   actions: {
     async GET_PRODUCTS_FROM_API({ commit }) {
       try {
-        const { data } = await axios('http://localhost:3000/products', {
+        const { data } = await axios('http://localhost:3000/api/products', {
           method: 'GET',
         });
 
-        commit('SET_PRODUCTS_TO_STATE', data);
-        return data;
+        const result = data.data.map((item) => {
+          item.price = item.price / 100;
+          item.sale_old_price = item.sale_old_price / 100;
+          return item;
+        });
+
+        commit('SET_PRODUCTS_TO_STATE', result);
+        return result;
       } catch (e) {
         console.log(e);
       }

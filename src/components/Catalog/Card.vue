@@ -3,7 +3,7 @@
     <div class="card__inner">
       <div class="card__content-wrapper">
         <a href="#" class="card__content-link">
-            <img
+          <img
             :src="require('@/assets/images/Catalog/' + product_data.image)"
             alt="cloth"
             class="card__content-item"
@@ -11,15 +11,20 @@
           <div
             class="card__content-sale"
             id="cardSale"
-            v-if="this.product_data.sale"
+            v-if="product_data.sale"
           >
             -{{ product_data.sale }}%
           </div>
         </a>
         <div class="card__content-buttons">
-          <button href="#" class="card__content-buttons-link"
-          @click="addToCart"
-            ><span class="card__content-buttons-item"><fa icon="shopping-cart"/></span> 
+          <button
+            href="#"
+            class="card__content-buttons-link"
+            @click="addToCart"
+          >
+            <span class="card__content-buttons-item"
+              ><fa icon="shopping-cart"
+            /></span>
           </button>
           <button href="#" class="card__content-buttons-link">
             <span class="card__content-buttons-item"><fa icon="eye"/></span>
@@ -39,9 +44,9 @@
         {{ product_data.price }} ₽
         <span
           class="card__footer-price__sale"
-          v-if="this.product_data.sale_oldPrice"
+          v-if="product_data.sale_old_price"
         >
-          {{ product_data.sale_oldPrice }} ₽
+          {{ product_data.sale_old_price }} ₽
         </span>
       </div>
     </div>
@@ -51,19 +56,22 @@
 <script>
 export default {
   name: 'Card',
-  data() {
-    return {};
-  },
+
   props: {
     product_data: {
       type: Object,
       default: () => {},
     },
   },
+
+  data() {
+    return {};
+  },
+
   methods: {
     addToCart() {
-      this.$emit('addToCart', this.product_data)
-    }
+      this.$emit('addToCart', this.product_data);
+    },
   },
 };
 </script>

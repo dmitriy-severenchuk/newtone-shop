@@ -26,57 +26,65 @@
 import Card from '@/components/Catalog/Card';
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import Select from '@/components/Select';
-import { mapActions, mapGetters } from 'vuex';
+import { mapActions } from 'vuex';
 
 export default {
-  data() {
-    return {
-      selected: 'Все',
-      sortedProducts: [],
-      categories: [
-        { name: 'Все', value: 'ALL' },
-        { name: 'Мужчинам', value: 1 },
-        { name: 'Женщинам', value: 2 },
-      ],
-    };
-  },
   components: {
     Card,
     Swiper,
     SwiperSlide,
     Select,
   },
-  methods: {
-    ...mapActions(['GET_PRODUCTS_FROM_API', 'ADD_TO_CART']),
 
-    addToCart(data) {
-      this.ADD_TO_CART(data);
-      console.log(data)
-    },
-
-    sortByCategories(category) {
-      this.sortedProducts = [];
-      this.selected = category.name;
-      this.PRODUCTS.map((item) => {
-        if (item.category === category.name) {
-          this.sortedProducts.sort(() => Math.random() - 0.5).push(item);
-        }
-      });
-    },
+  data() {
+    return {
+      selected: 'Все',
+      products: [],
+      sortedProducts: [],
+      categories: [
+        { name: 'Все', value: '' },
+        { name: 'Мужчинам', value: 1 },
+        { name: 'Женщинам', value: 2 },
+      ],
+    };
   },
-  computed: {
-    ...mapGetters(['PRODUCTS']),
 
+  computed: {
     filteredProducts() {
       if (this.sortedProducts.length) {
         return this.sortedProducts;
       } else {
-        return this.PRODUCTS;
+        return this.products;
       }
     },
   },
-  mounted() {
-    this.GET_PRODUCTS_FROM_API();
+
+  beforeMount() {
+    this.initProducts();
+  },
+
+  methods: {
+    ...mapActions(['GET_PRODUCTS_FROM_API', 'ADD_TO_CART']),
+
+    async initProducts() {
+      this.products = await this.GET_PRODUCTS_FROM_API();
+    },
+
+    addToCart(data) {
+      this.ADD_TO_CART(data);
+      console.log(data);
+    },
+
+    sortByCategories(category) {
+      this.sortedProducts = [];
+      this.products.forEach((item) => {
+        if (item.category_id === category.value) {
+          this.sortedProducts.push(item);
+        } else if (!category.value) {
+          this.sortedProducts = this.products.slice();
+        }
+      });
+    },
   },
 };
 </script>
