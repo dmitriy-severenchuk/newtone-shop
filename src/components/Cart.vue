@@ -4,8 +4,8 @@
       <h2 class="cart__title">Корзина</h2>
       <div class="cart__inner">
         <CartItem
-          v-for="item in cartData"
-          :key="item.article"
+          v-for="item in CART"
+          :key="item.product.id"
           :cartItemData="item"
         />
       </div>
@@ -15,16 +15,14 @@
 
 <script>
 import CartItem from '@/components/Cart-item';
+import { mapGetters } from 'vuex';
 
 export default {
   components: {
     CartItem,
   },
-  props: {
-    cartData: {
-      type: Array,
-      default: () => [],
-    },
+   computed: {
+    ...mapGetters(['CART']),
   },
 };
 </script>

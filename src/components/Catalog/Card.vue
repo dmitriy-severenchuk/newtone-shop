@@ -20,7 +20,7 @@
           <button
             href="#"
             class="card__content-buttons-link"
-            @click="addToCart"
+            @click="addToCart()"
           >
             <span class="card__content-buttons-item"
               ><fa icon="shopping-cart"
@@ -70,7 +70,10 @@ export default {
 
   methods: {
     addToCart() {
-      this.$emit('addToCart', this.product_data);
+      this.$store.dispatch('ADD_TO_CART', {
+        product: this.product_data,
+        quantity: 1
+      })
     },
   },
 };

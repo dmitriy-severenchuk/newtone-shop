@@ -72,18 +72,19 @@ export default {
 
     addToCart(data) {
       this.ADD_TO_CART(data);
-      console.log(data);
     },
 
     sortByCategories(category) {
       this.sortedProducts = [];
       this.products.forEach((item) => {
-        if (item.category_id === category.value) {
+        if (item.category === category.name) {
           this.sortedProducts.push(item);
         } else if (!category.value) {
           this.sortedProducts = this.products.slice();
         }
       });
+
+      // Убрал (item.category_id === category.value) - с этим не работает сортировка
     },
   },
 };

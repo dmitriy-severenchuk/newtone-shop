@@ -26,7 +26,7 @@
           <router-link to="/cart" class="header__controls__icon">
             <span class="header__controls__icon-cart"></span>
             <span class="header__controls__icon-counter" id="cartItemsCounter"
-              >0</span
+              >{{CART_ITEM_COUNT}}</span
             >
           </router-link>
           <span class="header__controls__total-price">0.00 ₽</span>
@@ -117,7 +117,14 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
+
 export default {
   name: 'TheHeader',
+  computed: {
+    ...mapGetters([
+      'CART_ITEM_COUNT'
+    ])
+  }
 };
 </script>
