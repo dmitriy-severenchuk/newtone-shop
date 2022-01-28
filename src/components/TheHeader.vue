@@ -29,7 +29,6 @@
               >{{CART_ITEM_COUNT}}</span
             >
           </router-link>
-          <span class="header__controls__total-price">0.00 ₽</span>
         </div>
       </div>
       <div class="header__footer">
@@ -123,7 +122,8 @@ export default {
   name: 'TheHeader',
   computed: {
     ...mapGetters([
-      'CART_ITEM_COUNT'
+      'CART_ITEM_COUNT',
+      'CART_TOTAL_PRICE'
     ])
   }
 };

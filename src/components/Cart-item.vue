@@ -4,7 +4,7 @@
       <img
         :src="require('@/assets/images/Catalog/' + cartItemData.product.image)"
         alt="cloth"
-        class="cart-item__image"
+        class="cart-item__image" 
       />
     </div>
     <div class="cart-item__content">
@@ -16,7 +16,7 @@
         <div class="cart-item__price">{{ cartItemData.product.price }}.00 ₽</div>
         <div class="cart-item__counter">
           <div class="cart-item__counter__wrapper">
-            <button class="cart-item__counter__button">-</button>
+            <button class="cart-item__counter__button">−</button>
             <span class="cart-item__counter__quantity">{{cartItemData.quantity}}</span>
             <button class="cart-item__counter__button">+</button>
           </div>
@@ -24,7 +24,7 @@
       </div>
       <div class="cart-item__content__elements">
         <div class="cart-item__close-button__wrapper">
-          <button class="cart-item__close-button">
+          <button class="cart-item__close-button" @click="removeCartItem">
             &#10006;
           </button>
         </div>
@@ -46,7 +46,9 @@ export default {
     },
   },
   methods: { 
-    
+    removeCartItem(){
+
+    }
   },
   
 };

@@ -48,12 +48,23 @@
 }
 .cart-item__counter {
   display: flex;
-
   &__button {
     display: inline-block;
     background-color: #525665;
     border: 0;
   }
+}
+.cart-item__counter__wrapper{
+  padding: 5px;
+}
+.cart-item__counter__button{
+  text-align: center;
+  color: #ffffff;
+  font-size: 16px;
+}
+.cart-item__counter__quantity{
+  color: #ffffff;
+  padding: 4px 6px;
 }
 
 .cart-item__content__elements {
@@ -79,3 +90,4 @@
 .cart-item__close-button:hover {
   background-color: #efefef;
 }
+

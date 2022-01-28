@@ -18,3 +18,7 @@ export default {
   setup() {},
 };
 </script>
+
+<style lang="scss">
+ 
+</style>

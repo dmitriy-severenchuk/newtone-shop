@@ -1,7 +1,11 @@
 <template>
   <div class="cart">
     <div class="container">
-      <h2 class="cart__title">Корзина</h2>
+      <div class="cart__header">
+        <h2 class="cart__title">Корзина</h2>
+        <div class="cart__total-price"> <strong>Итого:</strong> {{CART_TOTAL_PRICE}}.00 ₽</div>
+      </div>
+      
       <div class="cart__inner">
         <CartItem
           v-for="item in CART"
@@ -9,6 +13,7 @@
           :cartItemData="item"
         />
       </div>
+      
     </div>
   </div>
 </template>
@@ -22,7 +27,7 @@ export default {
     CartItem,
   },
    computed: {
-    ...mapGetters(['CART']),
+    ...mapGetters(['CART', 'CART_TOTAL_PRICE']),
   },
 };
 </script>

@@ -3,16 +3,11 @@ import axios from 'axios';
 export default {
   state: {
     products: [],
-    cart: [
-      // {
-      //   image: 'w1.webp',
-      //   title: 'Твидовый кардиган из хлопка',
-      //   price: '7490',
-      //   sale: '',
-      //   sale_oldPrice: '',
-      //   category: 'Женщинам',
-      //   id: 1,
-      // },
+    cart: [],
+    categories: [
+      { name: 'Все', value: '' },
+      { name: 'Мужчинам', value: 1 },
+      { name: 'Женщинам', value: 2 },
     ],
   },
 
@@ -23,8 +18,21 @@ export default {
     CART(state) {
       return state.cart;
     },
-    CART_ITEM_COUNT(state){
+    CART_ITEM_COUNT(state) {
       return state.cart.length;
+    },
+    CART_TOTAL_PRICE(state){
+      let total = 0;
+
+      state.cart.forEach(item => {
+        total += item.product.price * item.quantity;
+      })
+
+      return total;
+    }
+    ,
+    CATEGORIES(state){
+      return state.categories;
     }
   },
   actions: {
@@ -49,8 +57,9 @@ export default {
 
     ADD_TO_CART({ commit }, { product, quantity }) {
       commit('SET_TO_CART', { product, quantity });
-    },
 
+      axios.post('')
+    },
   },
 
   mutations: {

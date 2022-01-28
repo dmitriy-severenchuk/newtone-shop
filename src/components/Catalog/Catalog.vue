@@ -3,10 +3,8 @@
     <div class="catalog__inner">
       <Select
         :selected="selected"
-        :options="categories"
         @select="sortByCategories"
       />
-      <p></p>
       <h2 class="catalog__title">{{ selected }}</h2>
       <h3 class="catalog__subtitle">Новинки</h3>
       <swiper
@@ -41,11 +39,7 @@ export default {
       selected: 'Все',
       products: [],
       sortedProducts: [],
-      categories: [
-        { name: 'Все', value: '' },
-        { name: 'Мужчинам', value: 1 },
-        { name: 'Женщинам', value: 2 },
-      ],
+      
     };
   },
 
@@ -75,6 +69,7 @@ export default {
     },
 
     sortByCategories(category) {
+      this.selected = category.name;
       this.sortedProducts = [];
       this.products.forEach((item) => {
         if (item.category === category.name) {

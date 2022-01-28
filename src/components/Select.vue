@@ -7,7 +7,7 @@
     <div class="select__options" v-if="areOptionsVisible">
       <span
         class="select__options-item"
-        v-for="option in options"
+        v-for="option in CATEGORIES"
         :key="option.value"
         @click="selectOption(option)"
       >
@@ -18,6 +18,8 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
+
 export default {
   data() {
     return {
@@ -25,12 +27,6 @@ export default {
     };
   },
   props: {
-    options: {
-      type: Array,
-      default() {
-        return [];
-      },
-    },
     selected: {
       type: String,
       default: '',
@@ -41,6 +37,9 @@ export default {
       this.$emit('select', option);
       this.areOptionsVisible = false;
     },
+  },
+  computed: {
+    ...mapGetters(['CATEGORIES']),
   },
 };
 </script>
