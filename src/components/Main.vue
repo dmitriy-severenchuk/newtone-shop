@@ -4,20 +4,20 @@
       <div class="page__inner">
         <div class="page__intro">
           <div class="page__intro__box">
-            <a href="#" class="page__intro__box__link"
+            <router-link to="/women" class="page__intro__box__link"
               ><img
                 src="@/assets/images/women.webp"
                 class="page__intro__box__link-img"
               />
               <span class="page__intro__box__link-content">Женское</span>
-            </a>
-            <a href="#" class="page__intro__box__link"
+            </router-link>
+            <router-link to="/men" class="page__intro__box__link"
               ><img
                 src="@/assets/images/men.webp"
                 class="page__intro__box__link-img"
               />
               <span class="page__intro__box__link-content">Мужское</span>
-            </a>
+            </router-link>
           </div>
           <div class="page__intro__categories">
             <a href="#" class="page__intro__categories__item">
@@ -129,7 +129,7 @@
 </template>
 
 <script>
-import Catalog from '@/components/Catalog/Catalog';
+import Catalog from '@/components/Catalog';
 
 export default {
   components: {

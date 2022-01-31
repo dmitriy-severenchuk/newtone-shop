@@ -11,12 +11,22 @@ const routes = [
       {
         path: '/',
         name: 'home-page',
-        component: () => import('@/views/Home.vue'),
+        component: () => import('@/views/Home-page.vue'),
       },
       {
         path: '/cart',
         name: 'cart',
         component: ()=> import('@/views/Cart-page.vue')
+      },
+      {
+        path: '/men',
+        name: 'men',
+        component: ()=> import('@/views/Men-page.vue')
+      },
+      {
+        path: '/women',
+        name: 'women',
+        component: ()=> import('@/views/Women-page.vue')
       }
     ],
   },

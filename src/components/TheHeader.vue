@@ -33,10 +33,10 @@
       </div>
       <div class="header__footer">
         <div class="header__footer-menu">
-          <a href="#" class="header__footer-menu__title"
-            >Женщины<span class="header__footer-menu__title-icon"
+          <router-link to="/women" class="header__footer-menu__title"
+            >Женщинам<span class="header__footer-menu__title-icon"
               ><fa icon="caret-down"/></span
-          ></a>
+          ></router-link>
           <div class="header__footer-menu__content">
             <ul class="header__footer-menu__content__main">
               <li class="header__footer-menu__content__main__item">
@@ -71,10 +71,10 @@
           </div>
         </div>
         <div class="header__footer-menu">
-          <a href="#" class="header__footer-menu__title"
-            >Мужчины<span class="header__footer-menu__title-icon"
+          <router-link to="/men" class="header__footer-menu__title"
+            >Мужчинам<span class="header__footer-menu__title-icon"
               ><fa icon="caret-down"/></span
-          ></a>
+          ></router-link>
           <div class="header__footer-menu__content">
             <ul class="header__footer-menu__content__main">
               <li class="header__footer-menu__content__main__item">
@@ -105,7 +105,6 @@
                   >Аксессуары</a
                 >
               </li>
-              
             </ul>
           </div>
         </div>
@@ -120,11 +119,20 @@ import { mapGetters } from 'vuex';
 
 export default {
   name: 'TheHeader',
+  data(){
+    return{
+      isCategory: ''
+    }
+  },
   computed: {
     ...mapGetters([
       'CART_ITEM_COUNT',
-      'CART_TOTAL_PRICE'
+      'CART_TOTAL_PRICE',
+
     ])
-  }
+  },
+  methods: {
+    
+  },
 };
 </script>

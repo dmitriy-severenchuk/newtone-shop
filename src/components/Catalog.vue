@@ -21,7 +21,7 @@
 </template>
 
 <script>
-import Card from '@/components/Catalog/Card';
+import Card from '@/components/Card';
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import Select from '@/components/Select';
 import { mapActions } from 'vuex';

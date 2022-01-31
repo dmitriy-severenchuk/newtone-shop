@@ -28,7 +28,6 @@
             &#10006;
           </button>
         </div>
-        <!-- <div class="cart-item__total-price">total price</div> -->
       </div>
     </div>
   </div>
