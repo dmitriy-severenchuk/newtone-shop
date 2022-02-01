@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import Men from '@/components/Men.vue';
+import Men from '@/components/Category-pages/Men.vue';
 
 export default {
   components: {

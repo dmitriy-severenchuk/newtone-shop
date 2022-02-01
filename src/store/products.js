@@ -57,8 +57,6 @@ export default {
 
     ADD_TO_CART({ commit }, { product, quantity }) {
       commit('SET_TO_CART', { product, quantity });
-
-      axios.post('')
     },
   },
 

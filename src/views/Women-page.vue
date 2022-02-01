@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import Women from '@/components/Women.vue';
+import Women from '@/components/Category-pages/Women.vue';
 
 export default {
   components: {

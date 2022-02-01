@@ -7,7 +7,7 @@
   margin-bottom: 30px;
 }
 .cart-item__image__wrapper {
-  width: 170px;
+  width: 180px;
 }
 .cart-item__image {
   width: 100%;
@@ -31,16 +31,28 @@
   font-family: 'Raleway-Medium';
   font-size: 22px;
   color: $dark__grey;
-  margin-bottom: 5px;
+  margin-bottom: 15px;
 }
-.cart-item__size {
-  font-family: 'Raleway-Medium';
-  font-weight: 600;
-  color: $dark__grey;
-  margin-bottom: 30px;
+.cart-item__size{
+  display: flex;
+  margin-bottom: 20px;
+  &-item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    font-weight: 400;
+    color: #505050;
+    background-color: #e0e0e0;
+    margin-right: 10px;
+    &:hover{
+      background-color: #a1a1a1;
+    }
+  }
 }
 .cart-item__price {
-  color: #b0b0b1;
+  color: #505050;
   font-weight: 300;
 }
 .cart-item__counter__wrapper {
