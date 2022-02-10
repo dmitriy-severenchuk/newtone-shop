@@ -26,7 +26,7 @@
           <router-link to="/cart" class="header__controls__icon">
             <span class="header__controls__icon-cart"></span>
             <span class="header__controls__icon-counter" id="cartItemsCounter"
-              >{{CART_ITEM_COUNT}}</span
+              >{{CART_ITEMS_COUNT}}</span
             >
           </router-link>
         </div>
@@ -121,18 +121,17 @@ export default {
   name: 'TheHeader',
   data(){
     return{
-      isCategory: ''
+      
     }
   },
   computed: {
     ...mapGetters([
-      'CART_ITEM_COUNT',
-      'CART_TOTAL_PRICE',
-
+      'CART_ITEMS_COUNT',
     ])
   },
+
   methods: {
-    
+
   },
 };
 </script>

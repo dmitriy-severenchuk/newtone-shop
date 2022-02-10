@@ -49,7 +49,6 @@ export default {
       this.PRODUCTS.forEach((item) => {
         if (item.category === this.pageCategory) {
           this.sortedProducts.push(item);
-          console.log(item.category);
         } else {
             return
         }

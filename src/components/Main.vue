@@ -84,45 +84,7 @@
         <a href="#" class="page__season__sale-link">
           <div class="page__season__sale"></div>
         </a>
-        <div class="our-store">
-          <div class="our-store__inner">
-            <div class="our-store__image"></div>
-            <div class="our-store__content">
-              <div class="our-store__title">Наши магазины в Москве</div>
-              <div class="our-store__stations">
-                <div class="our-store__stations-item">
-                  М:
-                  <span class="our-store__stations-item_name"
-                    >Комсомольская</span
-                  >
-                </div>
-                <div class="our-store__stations-item">
-                  М:
-                  <span class="our-store__stations-item_name">Бауманская</span>
-                </div>
-              </div>
-              <div class="our-store__address">
-                <div class="our-store__text-title">Адрес:</div>
-                <div class="our-store__address__text">
-                  Новорязанская ул., 18, стр. 11
-                </div>
-              </div>
-              <div class="our-store__contacts">
-                <div class="our-store__text-title">Контакты:</div>
-                <div class="our-store__contacts-item">+7 800 555-10-61</div>
-                <div class="our-store__contacts-item">пн-пт 10:00-19:00</div>
-              </div>
-              <a href="#" class="our-store__map-link"
-                >Посмотреть на карте
-                <img
-                  src="@/assets/images/next.svg"
-                  alt="next"
-                  class="our-store__map-link__img"
-                />
-              </a>
-            </div>
-          </div>
-        </div>
+        <Filiation />
       </div>
     </div>
   </div>
@@ -130,10 +92,11 @@
 
 <script>
 import Catalog from '@/components/Catalog';
-
+import Filiation from '@/components/Filiation'
 export default {
   components: {
     Catalog,
+    Filiation
   },
 };
 </script>

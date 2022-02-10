@@ -71,8 +71,8 @@ export default {
   methods: {
     addToCart() {
       this.$store.dispatch('ADD_TO_CART', {
-        product: this.product_data,
-        quantity: 1
+        product: this.product_data, 'quantity': 1
+        
       })
     },
   },

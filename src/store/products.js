@@ -9,6 +9,18 @@ export default {
       { name: 'Мужчинам', value: 1 },
       { name: 'Женщинам', value: 2 },
     ],
+    affiliates: [
+      {
+        adress: 'Новорязанская ул., 18, стр. 11',
+        phone_number: '7 800 555-10-61',
+        timetable: 'пн-пт 10:00-19:00',
+      },
+      {
+        adress: 'г. Москва, ул. Новорязанская, 18, стр. 11',
+        phone_number: '7 495 649-83-14',
+        timetable: 'пн-пт 10:00-20:00',
+      },
+    ],
   },
 
   getters: {
@@ -18,22 +30,21 @@ export default {
     CART(state) {
       return state.cart;
     },
-    CART_ITEM_COUNT(state) {
+    CART_ITEMS_COUNT(state) {
       return state.cart.length;
     },
-    CART_TOTAL_PRICE(state){
+    CART_TOTAL_PRICE(state) {
       let total = 0;
 
-      state.cart.forEach(item => {
+      state.cart.forEach((item) => {
         total += item.product.price * item.quantity;
-      })
+      });
 
       return total;
-    }
-    ,
-    CATEGORIES(state){
+    },
+    CATEGORIES(state) {
       return state.categories;
-    }
+    },
   },
   actions: {
     async GET_PRODUCTS_FROM_API({ commit }) {
@@ -58,6 +69,17 @@ export default {
     ADD_TO_CART({ commit }, { product, quantity }) {
       commit('SET_TO_CART', { product, quantity });
     },
+
+    removeProductFromCart({ commit }, product) {
+      commit('REMOVE_PRODUCT_FROM_CART', product);
+    },
+
+    INCREMENT_CART_ITEM({ commit }, index) {
+      commit('INCREMENT', index);
+    },
+    DECREMENT_CART_ITEM({ commit }, index) {
+      commit('DECREMENT', index);
+    },
   },
 
   mutations: {
@@ -75,6 +97,22 @@ export default {
       }
 
       state.cart.push({ product, quantity });
+    },
+
+    REMOVE_PRODUCT_FROM_CART: (state, product) => {
+      state.cart = state.cart.filter((item) => {
+        return item.product.id !== product.id;
+      });
+    },
+    INCREMENT: (state, index) => {
+      state.cart[index].quantity++;
+    },
+    DECREMENT: (state, index) => {
+      if (state.cart[index].quantity >= 2) {
+        return state.cart[index].quantity--;
+      } else {
+        return 1;
+      }
     },
   },
 };
