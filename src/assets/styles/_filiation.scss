@@ -7,10 +7,14 @@
   display: flex;
   justify-content: space-between;
 }
-.filiation__image {
+.filiation__image-wrapper {
   width: 50%;
   height: 400px;
-  background: url(./assets/images/filiation1.webp) center no-repeat;
+  overflow: hidden;
+}
+.filiation__image {
+  width: 100%;
+  object-fit: cover;
 }
 .filiation__content {
   width: 50%;

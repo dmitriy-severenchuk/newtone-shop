@@ -1,1 +1,2 @@
 import './swiper';
+import './ui';

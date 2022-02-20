@@ -9,18 +9,23 @@ export default {
       { name: 'Мужчинам', value: 1 },
       { name: 'Женщинам', value: 2 },
     ],
-    affiliates: [
+    filiations: [
       {
+        image: '1.webp',
         adress: 'Новорязанская ул., 18, стр. 11',
         phone_number: '7 800 555-10-61',
         timetable: 'пн-пт 10:00-19:00',
+        id: 1,
       },
       {
+        image: '2.webp',
         adress: 'г. Москва, ул. Новорязанская, 18, стр. 11',
         phone_number: '7 495 649-83-14',
         timetable: 'пн-пт 10:00-20:00',
+        id: 2,
       },
     ],
+    showPopup: true
   },
 
   getters: {
@@ -31,19 +36,33 @@ export default {
       return state.cart;
     },
     CART_ITEMS_COUNT(state) {
-      return state.cart.length;
+      Array.prototype.sum = function(prop) {
+        let totalCount = 0;
+        for (let i = 0; i < this.length; i++) {
+          totalCount += this[i][prop];
+        }
+        return totalCount;
+      };
+      return state.cart.sum('quantity');
     },
     CART_TOTAL_PRICE(state) {
-      let total = 0;
+      let totalPrice = 0;
 
       state.cart.forEach((item) => {
-        total += item.product.price * item.quantity;
+        totalPrice += item.product.price * item.quantity;
       });
 
-      return total;
+      return totalPrice;
     },
     CATEGORIES(state) {
       return state.categories;
+    },
+
+    FILIATION(state) {
+      return state.filiations;
+    },
+    GET_POPUP(state) {
+      return state.showPopup;
     },
   },
   actions: {
@@ -80,6 +99,9 @@ export default {
     DECREMENT_CART_ITEM({ commit }, index) {
       commit('DECREMENT', index);
     },
+    SHOW_PRODUCT_POPUP({commit}){
+      commit('CHANGE_POPUP_VALUE')
+    }
   },
 
   mutations: {
@@ -95,7 +117,6 @@ export default {
         productInCart.quantity += quantity;
         return;
       }
-
       state.cart.push({ product, quantity });
     },
 
@@ -114,5 +135,9 @@ export default {
         return 1;
       }
     },
+    CHANGE_POPUP_VALUE: (state) => {
+      console.log(state.showPopup)
+      return state.showPopup = true;
+    }
   },
 };

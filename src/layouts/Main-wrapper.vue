@@ -15,7 +15,9 @@ export default {
     TheHeader,
     TheFooter,
   },
-  setup() {},
+  setup() {
+
+  },
 };
 </script>
 

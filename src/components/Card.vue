@@ -26,7 +26,7 @@
               ><fa icon="shopping-cart"
             /></span>
           </button>
-          <button href="#" class="card__content-buttons-link">
+          <button href="#" class="card__content-buttons-link" @click="clickToShowPopup(product_data)">
             <span class="card__content-buttons-item"><fa icon="eye"/></span>
           </button>
         </div>
@@ -54,6 +54,8 @@
 </template>
 
 <script>
+import {mapGetters, mapActions} from 'vuex'
+
 export default {
   name: 'Card',
 
@@ -69,12 +71,20 @@ export default {
   },
 
   methods: {
+    ...mapActions(['SHOW_PRODUCT_POPUP']),
     addToCart() {
       this.$store.dispatch('ADD_TO_CART', {
         product: this.product_data, 'quantity': 1
         
       })
     },
+    clickToShowPopup(){
+      this.SHOW_PRODUCT_POPUP();
+      this.$emit('popup_data', this.product_data)
+    }
   },
+  computed: {
+    ...mapGetters(['GET_POPUP'])
+  }
 };
 </script>

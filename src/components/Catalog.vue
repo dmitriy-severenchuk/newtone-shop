@@ -1,10 +1,10 @@
 <template>
+  <ProductPopup>
+    
+  </ProductPopup>
   <div class="catalog" v-if="filteredProducts.length">
     <div class="catalog__inner">
-      <Select
-        :selected="selected"
-        @select="sortByCategories"
-      />
+      <Select :selected="selected" @select="sortByCategories" />
       <h2 class="catalog__title">{{ selected }}</h2>
       <h3 class="catalog__subtitle">Новинки</h3>
       <swiper
@@ -13,7 +13,7 @@
         :navigation="{ clickable: true }"
       >
         <swiper-slide v-for="(product, id) in filteredProducts" :key="id">
-          <Card :product_data="product" @addToCart="addToCart" />
+          <Card :product_data="product" @addToCart="addToCart"/>
         </swiper-slide>
       </swiper>
     </div>
@@ -26,12 +26,15 @@ import { Swiper, SwiperSlide } from 'swiper/vue';
 import Select from '@/components/Select';
 import { mapActions } from 'vuex';
 
+import ProductPopup from '@/components/UI/Product-popup/';
+
 export default {
   components: {
     Card,
     Swiper,
     SwiperSlide,
     Select,
+    ProductPopup,
   },
 
   data() {
@@ -39,7 +42,6 @@ export default {
       selected: 'Все',
       products: [],
       sortedProducts: [],
-      
     };
   },
 
