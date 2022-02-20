@@ -8,11 +8,20 @@ import { fas } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 //Swiper
 import './plugins';
+//Components
+import ProductPopup from '@/components/UI/Product-popup/';
 
 library.add(fas);
+
+
+
+
+
+
 
 createApp(App)
   .use(store)
   .component('fa', FontAwesomeIcon)
+  .component('product-popup', ProductPopup)
   .use(router)
   .mount('#app');

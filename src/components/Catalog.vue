@@ -1,7 +1,5 @@
 <template>
-  <ProductPopup>
-    
-  </ProductPopup>
+  <product-popup></product-popup>
   <div class="catalog" v-if="filteredProducts.length">
     <div class="catalog__inner">
       <Select :selected="selected" @select="sortByCategories" />
@@ -26,7 +24,6 @@ import { Swiper, SwiperSlide } from 'swiper/vue';
 import Select from '@/components/Select';
 import { mapActions } from 'vuex';
 
-import ProductPopup from '@/components/UI/Product-popup/';
 
 export default {
   components: {
@@ -34,7 +31,7 @@ export default {
     Swiper,
     SwiperSlide,
     Select,
-    ProductPopup,
+ 
   },
 
   data() {
