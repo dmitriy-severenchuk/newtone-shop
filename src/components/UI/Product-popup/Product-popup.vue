@@ -3,7 +3,9 @@
     <div class="product-popup">
       <div class="product-popup__header">
         <h3 class="product-popup__title">Product name</h3>
-        <button class="product-popup__close">&#10006;</button>
+        <button class="product-popup__close" @click="closePopup">
+          &#10006;
+        </button>
       </div>
       <div class="product-popup__inner">
         <slot></slot>
@@ -13,7 +15,7 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
+import { mapGetters, mapActions } from 'vuex';
 
 export default {
   name: 'product-popup',
@@ -23,7 +25,12 @@ export default {
   computed: {
     ...mapGetters(['GET_POPUP']),
   },
-  methods: {},
+  methods: {
+    ...mapActions(['CLOSE_PRODUCT_POPUP']),
+    closePopup() {
+      this.CLOSE_PRODUCT_POPUP();
+    },
+  },
 };
 </script>
 

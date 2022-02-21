@@ -25,7 +25,7 @@ export default {
         id: 2,
       },
     ],
-    showPopup: true
+    showPopup: false,
   },
 
   getters: {
@@ -99,9 +99,12 @@ export default {
     DECREMENT_CART_ITEM({ commit }, index) {
       commit('DECREMENT', index);
     },
-    SHOW_PRODUCT_POPUP({commit}){
-      commit('CHANGE_POPUP_VALUE')
-    }
+    SHOW_PRODUCT_POPUP({ commit }) {
+      commit('CHANGE_POPUP_VALUE');
+    },
+    CLOSE_PRODUCT_POPUP({ commit }) {
+      commit('CHANGE_POPUP_VALUE');
+    },
   },
 
   mutations: {
@@ -136,8 +139,7 @@ export default {
       }
     },
     CHANGE_POPUP_VALUE: (state) => {
-      console.log(state.showPopup)
-      return state.showPopup = true;
-    }
+      return (state.showPopup = !state.showPopup);
+    },
   },
 };
