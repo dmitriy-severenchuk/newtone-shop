@@ -3,11 +3,14 @@
     {
       "image": "w1.webp",
       "title": "Твидовый кардиган из хлопка",
-      "price": "7490",
-      "sale": "",
-      "sale_oldPrice": "",
-      "category": "Женщинам",
-      "id": 1
+      "price": "6990",
+      "sale": "30",
+      "sale_oldPrice": "9990",
+      "gender": "Женщинам",
+      "category": "Одежда",
+      "subcategory": "Старые-коллекции",
+      "id": 1,
+      "info": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nec dui nunc mattis enim ut tellus elementum. Facilisis mauris sit amet massa vitae. Turpis massa sed elementum tempus egestas sed sed risus pretium. A lacus vestibulum sed arcu non odio."
     },
     {
       "image": "w2.webp",
@@ -15,8 +18,11 @@
       "price": "4990",
       "sale": "50",
       "sale_oldPrice": "9990",
-      "category": "Женщинам",
-      "id": 2
+      "gender": "Женщинам",
+      "category": "Одежда",
+      "subcategory": "Старые-коллекции",
+      "id": 2,
+      "info": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nec dui nunc mattis enim ut tellus elementum. Facilisis mauris sit amet massa vitae. Turpis massa sed elementum tempus egestas sed sed risus pretium. A lacus vestibulum sed arcu non odio."
     },
     {
       "image": "w3.webp",
@@ -24,8 +30,11 @@
       "price": "3290",
       "sale": "",
       "sale_oldPrice": "",
-      "category": "Женщинам",
-      "id": 3
+      "gender": "Женщинам",
+      "category": "Одежда",
+      "subcategory": "Старые-коллекции",
+      "id": 3,
+      "info": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nec dui nunc mattis enim ut tellus elementum. Facilisis mauris sit amet massa vitae. Turpis massa sed elementum tempus egestas sed sed risus pretium. A lacus vestibulum sed arcu non odio."
     },
     {
       "image": "w4.webp",
@@ -33,8 +42,11 @@
       "price": "3590",
       "sale": "",
       "sale_oldPrice": "",
-      "category": "Женщинам",
-      "id": 4
+      "gender": "Женщинам",
+      "category": "Одежда",
+      "subcategory": "Вышевка",
+      "id": 4,
+      "info": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nec dui nunc mattis enim ut tellus elementum. Facilisis mauris sit amet massa vitae. Turpis massa sed elementum tempus egestas sed sed risus pretium. A lacus vestibulum sed arcu non odio."
     },
     {
       "image": "w5.webp",
@@ -42,8 +54,11 @@
       "price": "3590",
       "sale": "",
       "sale_oldPrice": "",
-      "category": "Женщинам",
-      "id": 5
+      "gender": "Женщинам",
+      "category": "Одежда",
+      "subcategory": "Вышевка",
+      "id": 5,
+      "info": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nec dui nunc mattis enim ut tellus elementum. Facilisis mauris sit amet massa vitae. Turpis massa sed elementum tempus egestas sed sed risus pretium. A lacus vestibulum sed arcu non odio."
     },
     {
       "image": "w6.webp",
@@ -51,8 +66,11 @@
       "price": "1690",
       "sale": "",
       "sale_oldPrice": "",
-      "category": "Женщинам",
-      "id": 6
+      "gender": "Женщинам",
+      "category": "Одежда",
+      "subcategory": "Средиземноморье",
+      "id": 6,
+      "info": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nec dui nunc mattis enim ut tellus elementum. Facilisis mauris sit amet massa vitae. Turpis massa sed elementum tempus egestas sed sed risus pretium. A lacus vestibulum sed arcu non odio."
     },
     {
       "image": "w7.webp",
@@ -60,8 +78,11 @@
       "price": "3590",
       "sale": "",
       "sale_oldPrice": "",
-      "category": "Женщинам",
-      "id": 7
+      "gender": "Женщинам",
+      "category": "Одежда",
+      "subcategory": "Средиземноморье",
+      "id": 7,
+      "info": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nec dui nunc mattis enim ut tellus elementum. Facilisis mauris sit amet massa vitae. Turpis massa sed elementum tempus egestas sed sed risus pretium. A lacus vestibulum sed arcu non odio."
     },
     {
       "image": "w8.webp",
@@ -69,8 +90,11 @@
       "price": "4990",
       "sale": "",
       "sale_oldPrice": "",
-      "category": "Женщинам",
-      "id": 8
+      "gender": "Женщинам",
+      "category": "Обувь",
+      "subcategory": "Средиземноморье",
+      "id": 8,
+      "info": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nec dui nunc mattis enim ut tellus elementum. Facilisis mauris sit amet massa vitae. Turpis massa sed elementum tempus egestas sed sed risus pretium. A lacus vestibulum sed arcu non odio."
     },
     {
       "image": "w9.webp",
@@ -78,8 +102,11 @@
       "price": "990",
       "sale": "",
       "sale_oldPrice": "",
-      "category": "Женщинам",
-      "id": 9
+      "gender": "Женщинам",
+      "category": "Обувь",
+      "subcategory": "Средиземноморье",
+      "id": 9,
+      "info": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nec dui nunc mattis enim ut tellus elementum. Facilisis mauris sit amet massa vitae. Turpis massa sed elementum tempus egestas sed sed risus pretium. A lacus vestibulum sed arcu non odio."
     },
     {
       "image": "w10.webp",
@@ -87,8 +114,11 @@
       "price": "3590",
       "sale": "",
       "sale_oldPrice": "",
-      "category": "Женщинам",
-      "id": 10
+      "gender": "Женщинам",
+      "category": "Одежда",
+      "subcategory": "Старые-коллекции",
+      "id": 10,
+      "info": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nec dui nunc mattis enim ut tellus elementum. Facilisis mauris sit amet massa vitae. Turpis massa sed elementum tempus egestas sed sed risus pretium. A lacus vestibulum sed arcu non odio."
     },
 
     {
@@ -97,8 +127,11 @@
       "price": "2490",
       "sale": "",
       "sale_oldPrice": "",
-      "category": "Мужчинам",
-      "id": 11
+      "gender": "Мужчинам",
+      "category": "Одежда",
+      "subcategory": "Старые-коллекции",
+      "id": 11,
+      "info": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nec dui nunc mattis enim ut tellus elementum. Facilisis mauris sit amet massa vitae. Turpis massa sed elementum tempus egestas sed sed risus pretium. A lacus vestibulum sed arcu non odio."
     },
     {
       "image": "m2.webp",
@@ -106,8 +139,11 @@
       "price": "2290",
       "sale": "",
       "sale_oldPrice": "",
-      "category": "Мужчинам",
-      "id": 12
+      "gender": "Мужчинам",
+      "category": "Одежда",
+      "subcategory": "Средиземноморье",
+      "id": 12,
+      "info": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nec dui nunc mattis enim ut tellus elementum. Facilisis mauris sit amet massa vitae. Turpis massa sed elementum tempus egestas sed sed risus pretium. A lacus vestibulum sed arcu non odio."
     },
     {
       "image": "m3.webp",
@@ -115,8 +151,11 @@
       "price": "1990",
       "sale": "",
       "sale_oldPrice": "",
-      "category": "Мужчинам",
-      "id": 13
+      "gender": "Мужчинам",
+      "category": "Одежда",
+      "subcategory": "Спорт",
+      "id": 13,
+      "info": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nec dui nunc mattis enim ut tellus elementum. Facilisis mauris sit amet massa vitae. Turpis massa sed elementum tempus egestas sed sed risus pretium. A lacus vestibulum sed arcu non odio."
     },
     {
       "image": "m4.webp",
@@ -124,8 +163,11 @@
       "price": "4990",
       "sale": "",
       "sale_oldPrice": "",
-      "category": "Мужчинам",
-      "id": 14
+      "gender": "Мужчинам",
+      "category": "Одежда",
+      "subcategory": "Старые-коллекции",
+      "id": 14,
+      "info": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nec dui nunc mattis enim ut tellus elementum. Facilisis mauris sit amet massa vitae. Turpis massa sed elementum tempus egestas sed sed risus pretium. A lacus vestibulum sed arcu non odio."
     },
     {
       "image": "m5.webp",
@@ -133,8 +175,11 @@
       "price": "2490",
       "sale": "31",
       "sale_oldPrice": "3590",
-      "category": "Мужчинам",
-      "id": 15
+      "gender": "Мужчинам",
+      "category": "Одежда",
+      "subcategory": "Старые-коллекции",
+      "id": 15,
+      "info": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nec dui nunc mattis enim ut tellus elementum. Facilisis mauris sit amet massa vitae. Turpis massa sed elementum tempus egestas sed sed risus pretium. A lacus vestibulum sed arcu non odio."
     },
     {
       "image": "m6.webp",
@@ -142,8 +187,11 @@
       "price": "4990",
       "sale": "",
       "sale_oldPrice": "",
-      "category": "Мужчинам",
-      "id": 16
+      "gender": "Мужчинам",
+      "category": "Одежда",
+      "subcategory": "Спорт",
+      "id": 16,
+      "info": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nec dui nunc mattis enim ut tellus elementum. Facilisis mauris sit amet massa vitae. Turpis massa sed elementum tempus egestas sed sed risus pretium. A lacus vestibulum sed arcu non odio."
     },
     {
       "image": "m7.webp",
@@ -151,8 +199,11 @@
       "price": "4990",
       "sale": "",
       "sale_oldPrice": "",
-      "category": "Мужчинам",
-      "id": 17
+      "gender": "Мужчинам",
+      "category": "Одежда",
+      "subcategory": "Старые-коллекции",
+      "id": 17,
+      "info": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nec dui nunc mattis enim ut tellus elementum. Facilisis mauris sit amet massa vitae. Turpis massa sed elementum tempus egestas sed sed risus pretium. A lacus vestibulum sed arcu non odio."
     },
     {
       "image": "m8.webp",
@@ -160,8 +211,11 @@
       "price": "10790",
       "sale": "10",
       "sale_oldPrice": "11990",
-      "category": "Мужчинам",
-      "id": 18
+      "gender": "Мужчинам",
+      "category": "Одежда",
+      "subcategory": "Старые-коллекции",
+      "id": 18,
+      "info": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nec dui nunc mattis enim ut tellus elementum. Facilisis mauris sit amet massa vitae. Turpis massa sed elementum tempus egestas sed sed risus pretium. A lacus vestibulum sed arcu non odio."
     },
     {
       "image": "m9.webp",
@@ -169,8 +223,11 @@
       "price": "3590",
       "sale": "28",
       "sale_oldPrice": "4990",
-      "category": "Мужчинам",
-      "id": 19
+      "gender": "Мужчинам",
+      "category": "Обувь",
+      "subcategory": "Спорт",
+      "id": 19,
+      "info": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nec dui nunc mattis enim ut tellus elementum. Facilisis mauris sit amet massa vitae. Turpis massa sed elementum tempus egestas sed sed risus pretium. A lacus vestibulum sed arcu non odio."
     },
     {
       "image": "m10.webp",
@@ -178,8 +235,11 @@
       "price": "4490",
       "sale": "",
       "sale_oldPrice": "",
-      "category": "Мужчинам",
-      "id": 20
+      "gender": "Мужчинам",
+      "category": "Одежда",
+      "subcategory": "Вышевка",
+      "id": 20,
+      "info": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nec dui nunc mattis enim ut tellus elementum. Facilisis mauris sit amet massa vitae. Turpis massa sed elementum tempus egestas sed sed risus pretium. A lacus vestibulum sed arcu non odio."
     },
     {
       "image": "m11.webp",
@@ -187,8 +247,11 @@
       "price": "3990",
       "sale": "",
       "sale_oldPrice": "",
-      "category": "Мужчинам",
-      "id": 21
+      "gender": "Мужчинам",
+      "category": "Одежда",
+      "subcategory": "Старые-коллекции",
+      "id": 21,
+      "info": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nec dui nunc mattis enim ut tellus elementum. Facilisis mauris sit amet massa vitae. Turpis massa sed elementum tempus egestas sed sed risus pretium. A lacus vestibulum sed arcu non odio."
     },
     {
       "image": "m12.webp",
@@ -196,8 +259,11 @@
       "price": "12990",
       "sale": "",
       "sale_oldPrice": "",
-      "category": "Мужчинам",
-      "id": 22
+      "gender": "Мужчинам",
+      "category": "Одежда",
+      "subcategory": "Старые-коллекции",
+      "id": 22,
+      "info": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nec dui nunc mattis enim ut tellus elementum. Facilisis mauris sit amet massa vitae. Turpis massa sed elementum tempus egestas sed sed risus pretium. A lacus vestibulum sed arcu non odio."
     }
   ]
 }

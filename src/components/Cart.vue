@@ -4,10 +4,9 @@
       <div class="cart__header">
         <h2 class="cart__title">Корзина</h2>
         <div class="cart__total-price">
-          <strong>Итого:</strong> {{ CART_TOTAL_PRICE }}.00 ₽
+          <strong>Итого:</strong> {{ CART_TOTAL_PRICE }}.00 грн
         </div>
       </div>
-
       <div class="cart__inner">
         <CartItem
           v-for="(item, index) in CART"

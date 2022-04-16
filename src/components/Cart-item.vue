@@ -9,45 +9,10 @@
     </div>
     <div class="cart-item__content">
       <div class="cart-item__content__info">
-        <a href="#" class="cart-item__title-link">
-          <h3 class="cart-item__title">{{ cartItemData.product.title }}</h3>
-          <div class="cart-item__size">
-            <div
-              class="cart-item__size-item"
-              :class="{ 'active-size': this.cartItemSize === 'S' }"
-              @click="this.cartItemSize = 'S'"
-            >
-              S
-            </div>
-            <div
-              class="cart-item__size-item"
-              :class="{ 'active-size': this.cartItemSize === 'M' }"
-              @click="this.cartItemSize = 'M'"
-            >
-              M
-            </div>
-            <div
-              class="cart-item__size-item"
-              :class="{ 'active-size': this.cartItemSize === 'L' }"
-              @click="this.cartItemSize = 'L'"
-            >
-              L
-            </div>
-            <div
-              class="cart-item__size-item"
-              :class="{ 'active-size': this.cartItemSize === 'XL' }"
-              @click="this.cartItemSize = 'XL'"
-            >
-              XL
-            </div>
-            <!-- <div class="cart-item__size-item">S</div>
-            <div class="cart-item__size-item">M</div>
-            <div class="cart-item__size-item">L</div>
-            <div class="cart-item__size-item">XL</div> -->
-          </div>
-        </a>
+        <h3 class="cart-item__title">{{ cartItemData.product.title }}</h3>
+        <div class="cart-item__size">Размер: <span>{{ cartItemData.size }}</span></div>
         <div class="cart-item__price">
-          {{ cartItemData.product.price }}.00 ₽
+          {{ cartItemData.product.price * cartItemData.quantity }}.00 грн
         </div>
         <div class="cart-item__counter">
           <div class="cart-item__counter__wrapper">
@@ -73,7 +38,7 @@
         <div class="cart-item__close-button__wrapper">
           <button
             class="cart-item__close-button"
-            @click="removeCartItemFromCart(cartItemData.product)"
+            @click="removeCartItemFromCart(cartItemData.uniqueCartItemIndex)"
           >
             &#10006;
           </button>
@@ -84,11 +49,11 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex';
+
 export default {
   data() {
-    return {
-      cartItemSize: '',
-    };
+    return {};
   },
   props: {
     cartItemData: {
@@ -97,11 +62,9 @@ export default {
     },
   },
   methods: {
-    getSize() {
-      console.log(this.size);
-    },
-    removeCartItemFromCart(product) {
-      this.$store.dispatch('removeProductFromCart', product);
+    ...mapActions(['GET_CART_ITEM_SIZE']),
+    removeCartItemFromCart(uniqueCartItemIndex) {
+      this.$store.dispatch('REMOVE_PRODUCT_FROM_CART', uniqueCartItemIndex);
     },
     decrementCartItem() {
       this.$emit('decrement');
@@ -113,6 +76,4 @@ export default {
 };
 </script>
 
-<style lang="scss">
-
-</style>
+<style lang="scss"></style>

@@ -45,49 +45,5 @@ export default {
 </script>
 
 <style lang="scss">
-.select {
-  width: 500px;
-  cursor: pointer;
-  text-align: center;
 
-  position: relative;
-  margin: 0 auto 30px;
-}
-.select__title {
-  font-size: 18px;
-  background-color: rgb(238, 238, 238);
-  border: 2px solid #2d2d2d;
-  transition: all linear 0.1s;
-  padding: 5px;
-  &-icon {
-    font-size: 20px;
-    margin-left: 5px;
-  }
-}
-.select__title:hover {
-  background-color: #d6d6d6;
-}
-.select__options {
-  display: flex;
-  flex-direction: column;
-
-  border-top: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  right: 0;
-  z-index: 2;
-  &-item {
-    background-color: #2d2d2d;
-    font-size: 18px;
-    color: #fff;
-    transition: background-color linear 0.2s;
-    padding: 8px;
-    &:hover {
-      background-color: rgb(70, 70, 70);
-    }
-    border: 2px solid #2d2d2d;
-    border-top: none;
-  }
-}
 </style>

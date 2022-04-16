@@ -85,12 +85,12 @@ export default {
       }
     },
 
-    ADD_TO_CART({ commit }, { product, quantity }) {
-      commit('SET_TO_CART', { product, quantity });
+    ADD_TO_CART({ commit }, { product, quantity, size, uniqueCartItemIndex }) {
+      commit('SET_TO_CART', { product, quantity, size, uniqueCartItemIndex });
     },
 
-    removeProductFromCart({ commit }, product) {
-      commit('REMOVE_PRODUCT_FROM_CART', product);
+    REMOVE_PRODUCT_FROM_CART({ commit }, uniqueCartItemIndex) {
+      commit('REMOVE_PRODUCT_FROM_CART', uniqueCartItemIndex);
     },
 
     INCREMENT_CART_ITEM({ commit }, index) {
@@ -98,6 +98,9 @@ export default {
     },
     DECREMENT_CART_ITEM({ commit }, index) {
       commit('DECREMENT', index);
+    },
+    GET_CART_ITEM_SIZE({ commit }, event) {
+      commit('SET_CART_ITEM_SIZE', event);
     },
     SHOW_PRODUCT_POPUP({ commit }) {
       commit('CHANGE_POPUP_VALUE');
@@ -111,22 +114,29 @@ export default {
     SET_PRODUCTS_TO_STATE: (state, products) => {
       state.products = products;
     },
-    SET_TO_CART: (state, { product, quantity }) => {
-      let productInCart = state.cart.find((item) => {
-        return item.product.id === product.id;
+
+    SET_TO_CART: (state, { product, quantity, size, uniqueCartItemIndex }) => {
+      let productInCart = state.cart.find((cart_item) => {
+        return cart_item.product.id === product.id && cart_item.size === size;
       });
 
       if (productInCart) {
         productInCart.quantity += quantity;
+
         return;
       }
-      state.cart.push({ product, quantity });
+
+      state.cart.push({ product, quantity, size, uniqueCartItemIndex });
     },
 
-    REMOVE_PRODUCT_FROM_CART: (state, product) => {
-      state.cart = state.cart.filter((item) => {
-        return item.product.id !== product.id;
+    REMOVE_PRODUCT_FROM_CART: (state, uniqueCartItemIndex) => {
+      state.cart = state.cart.filter((cart_item) => {
+        return cart_item.uniqueCartItemIndex !== uniqueCartItemIndex;
       });
+
+      // state.cart = state.cart.filter((cart_item) => {
+      //   return cart_item.uniqueCartItemIndex !== uniqueCartItemIndex;
+      // });
     },
     INCREMENT: (state, index) => {
       state.cart[index].quantity++;

@@ -38,24 +38,26 @@ li {
 
 // Прижать футер к низу
 
-.main-wrapper{
+.main-wrapper {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
-.main-wrapper__middle-of-page{
+.main-wrapper__content {
   flex: 1 1 auto;
 }
-
 
 @import 'variables';
 @import 'header';
 @import 'main';
+@import 'card';
+@import 'swiper';
+@import 'catalog';
 @import 'category-page';
+@import 'product-popup';
+@import 'product-page';
 @import 'filiation';
 @import 'footer';
-@import 'Catalog/catalog';
+@import 'select';
 @import 'cart';
 @import 'cart-item';
-
-

@@ -11,8 +11,6 @@ export default {
   components: {
     MainPage,
   },
-
-  setup() {},
 };
 </script>
 

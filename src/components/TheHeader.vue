@@ -25,84 +25,101 @@
           </a>
           <router-link to="/cart" class="header__controls__icon">
             <span class="header__controls__icon-cart"></span>
-            <span class="header__controls__icon-counter" id="cartItemsCounter"
-              >{{CART_ITEMS_COUNT}}</span
+            <span
+              class="header__controls__icon-counter"
+              id="cartItemsCounter"
+              >{{ CART_ITEMS_COUNT }}</span
             >
           </router-link>
         </div>
       </div>
       <div class="header__footer">
         <div class="header__footer-menu">
-          <router-link to="/women" class="header__footer-menu__title"
+          <router-link
+            :to="{
+              name: 'genderPage',
+              params: { gender: 'Женщинам' },
+            }"
+            class="header__footer-menu__title"
             >Женщинам<span class="header__footer-menu__title-icon"
               ><fa icon="caret-down"/></span
           ></router-link>
           <div class="header__footer-menu__content">
             <ul class="header__footer-menu__content__main">
               <li class="header__footer-menu__content__main__item">
-                <a
-                  href="#"
+                <router-link
+                   :to="{
+                    name: 'categoryPage',
+                    params: { gender: 'Женщинам', category: 'Одежда' },
+                  }"
                   class="header__footer-menu__content__main__item-link"
-                  >Популярное</a
+                  >Одежда</router-link
                 >
               </li>
               <li class="header__footer-menu__content__main__item">
-                <a
-                  href="#"
+                <router-link
+                  :to="{
+                    name: 'categoryPage',
+                    params: { gender: 'Женщинам', category: 'Обувь' },
+                  }"
                   class="header__footer-menu__content__main__item-link"
-                  >Одежда</a
+                  >Обувь</router-link
                 >
               </li>
               <li class="header__footer-menu__content__main__item">
-                <a
-                  href="#"
+                <router-link
+                  :to="{
+                    name: 'categoryPage',
+                    params: { gender: 'Женщинам', category: 'Аксессуары' },
+                  }"
                   class="header__footer-menu__content__main__item-link"
-                  >Обувь</a
-                >
-              </li>
-              <li class="header__footer-menu__content__main__item">
-                <a
-                  href="#"
-                  class="header__footer-menu__content__main__item-link"
-                  >Аксессуары</a
+                  >Аксессуары</router-link
                 >
               </li>
             </ul>
           </div>
         </div>
         <div class="header__footer-menu">
-          <router-link to="/men" class="header__footer-menu__title"
+          <router-link
+            :to="{
+              name: 'genderPage',
+              params: { gender: 'Мужчинам' },
+            }"
+            class="header__footer-menu__title"
             >Мужчинам<span class="header__footer-menu__title-icon"
               ><fa icon="caret-down"/></span
           ></router-link>
           <div class="header__footer-menu__content">
             <ul class="header__footer-menu__content__main">
               <li class="header__footer-menu__content__main__item">
-                <a
-                  href="#"
+                <router-link
+                  :to="{
+                    name: 'categoryPage',
+                    params: { gender: 'Мужчинам', category: 'Одежда' },
+                  }"
                   class="header__footer-menu__content__main__item-link"
-                  >Популярное</a
+                >
+                  Одежда
+                </router-link>
+              </li>
+              <li class="header__footer-menu__content__main__item">
+                <router-link
+                  :to="{
+                    name: 'categoryPage',
+                    params: { gender: 'Мужчинам', category: 'Обувь' },
+                  }"
+                  class="header__footer-menu__content__main__item-link"
+                  >Обувь</router-link
                 >
               </li>
               <li class="header__footer-menu__content__main__item">
-                <a
-                  href="#"
+                <router-link
+                  :to="{
+                    name: 'categoryPage',
+                    params: { gender: 'Мужчинам', category: 'Аксессуары' },
+                  }"
                   class="header__footer-menu__content__main__item-link"
-                  >Одежда</a
-                >
-              </li>
-              <li class="header__footer-menu__content__main__item">
-                <a
-                  href="#"
-                  class="header__footer-menu__content__main__item-link"
-                  >Обувь</a
-                >
-              </li>
-              <li class="header__footer-menu__content__main__item">
-                <a
-                  href="#"
-                  class="header__footer-menu__content__main__item-link"
-                  >Аксессуары</a
+                  >Аксессуары</router-link
                 >
               </li>
             </ul>
@@ -111,7 +128,6 @@
       </div>
     </div>
   </header>
-  
 </template>
 
 <script>
@@ -119,19 +135,13 @@ import { mapGetters } from 'vuex';
 
 export default {
   name: 'TheHeader',
-  data(){
-    return{
-      
-    }
+  data() {
+    return {};
   },
   computed: {
-    ...mapGetters([
-      'CART_ITEMS_COUNT',
-    ])
+    ...mapGetters(['CART_ITEMS_COUNT']),
   },
 
-  methods: {
-
-  },
+  methods: {},
 };
 </script>

@@ -2,11 +2,11 @@
   <div class="card">
     <div class="card__inner">
       <div class="card__content-wrapper">
-        <a href="#" class="card__content-link">
+        <div class="card__content-link">
           <img
             :src="require('@/assets/images/Catalog/' + product_data.image)"
             alt="cloth"
-            class="card__content-item"
+            class="card__content-image"
           />
           <div
             class="card__content-sale"
@@ -15,38 +15,46 @@
           >
             -{{ product_data.sale }}%
           </div>
-        </a>
+        </div>
         <div class="card__content-buttons">
           <button
-            href="#"
             class="card__content-buttons-link"
-            @click="addToCart()"
+            @click="clickToShowPopup()"
           >
-            <span class="card__content-buttons-item"
-              ><fa icon="shopping-cart"
-            /></span>
-          </button>
-          <button href="#" class="card__content-buttons-link" @click="clickToShowPopup(product_data)">
             <span class="card__content-buttons-item"><fa icon="eye"/></span>
           </button>
         </div>
         <div class="card__content-footer">
-          <a href="#" class="card__content-footer-item">S</a>
-          <a href="#" class="card__content-footer-item">M</a>
-          <a href="#" class="card__content-footer-item">L</a>
-          <a href="#" class="card__content-footer-item">XL</a>
+          <div class="card__content-footer-item" @click="chosenSize($event)">
+            S
+          </div>
+          <div class="card__content-footer-item" @click="chosenSize($event)">
+            M
+          </div>
+          <div class="card__content-footer-item" @click="chosenSize($event)">
+            L
+          </div>
+          <div class="card__content-footer-item" @click="chosenSize($event)">
+            XL
+          </div>
         </div>
       </div>
     </div>
     <div class="card__footer">
-      <a href="#" class="card__footer-title">{{ product_data.title }}</a>
+      <router-link
+        :to="{ name: 'productPage', params: { id: product_data.id} }"
+      >
+        <span class="card__footer-title">
+          {{ product_data.title }}
+        </span>
+      </router-link>
       <div class="card__footer-price">
-        {{ product_data.price }} ₽
+        {{ product_data.price }} грн
         <span
           class="card__footer-price__sale"
-          v-if="product_data.sale_old_price"
+          v-if="product_data.sale_oldPrice"
         >
-          {{ product_data.sale_old_price }} ₽
+          {{ product_data.sale_oldPrice }} грн
         </span>
       </div>
     </div>
@@ -54,7 +62,7 @@
 </template>
 
 <script>
-import {mapGetters, mapActions} from 'vuex'
+import { mapGetters, mapActions } from 'vuex';
 
 export default {
   name: 'Card',
@@ -67,24 +75,30 @@ export default {
   },
 
   data() {
-    return {};
+    return {
+      itemInCart: false,
+      chosenItemSize: '',
+    };
   },
 
   methods: {
     ...mapActions(['SHOW_PRODUCT_POPUP']),
-    addToCart() {
-      this.$store.dispatch('ADD_TO_CART', {
-        product: this.product_data, 'quantity': 1
-        
-      })
+    chosenSize(event) {
+      this.chosenItemSize = event.target.innerHTML;
+
+      this.$emit('chosenItemSize', this.chosenItemSize);
+      this.clickToShowPopup();
     },
-    clickToShowPopup(){
+    clickToShowPopup() {
       this.SHOW_PRODUCT_POPUP();
-      this.$emit('popup_data', this.product_data)
-    }
+      this.$emit('popup_data');
+      return;
+    },
   },
   computed: {
-    ...mapGetters(['GET_POPUP'])
-  }
+    ...mapGetters(['GET_POPUP']),
+  },
 };
 </script>
+
+<style lang="scss"></style>

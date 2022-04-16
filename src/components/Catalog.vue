@@ -1,5 +1,13 @@
 <template>
-  <product-popup></product-popup>
+  <transition name="popup__appear">
+    <product-popup>
+      <product-popup-main
+        :popup_data="filteredProducts[this.popupId]"
+        :popupItemSize="this.itemSize"
+      />
+    </product-popup>
+  </transition>
+
   <div class="catalog" v-if="filteredProducts.length">
     <div class="catalog__inner">
       <Select :selected="selected" @select="sortByCategories" />
@@ -11,7 +19,11 @@
         :navigation="{ clickable: true }"
       >
         <swiper-slide v-for="(product, id) in filteredProducts" :key="id">
-          <Card :product_data="product" @addToCart="addToCart"/>
+          <Card
+            :product_data="product"
+            @chosenItemSize="getItemSizeFromCard"
+            @popup_data="GetPopupData(id)"
+          />
         </swiper-slide>
       </swiper>
     </div>
@@ -19,11 +31,10 @@
 </template>
 
 <script>
-import Card from '@/components/Card';
-import { Swiper, SwiperSlide } from 'swiper/vue';
-import Select from '@/components/Select';
 import { mapActions } from 'vuex';
-
+import { Swiper, SwiperSlide } from 'swiper/vue';
+import Card from '@/components/Card';
+import Select from '@/components/Select';
 
 export default {
   components: {
@@ -31,7 +42,6 @@ export default {
     Swiper,
     SwiperSlide,
     Select,
- 
   },
 
   data() {
@@ -39,6 +49,8 @@ export default {
       selected: 'Все',
       products: [],
       sortedProducts: [],
+      popupId: 0,
+      itemSize: '',
     };
   },
 
@@ -54,6 +66,7 @@ export default {
 
   beforeMount() {
     this.initProducts();
+    this.getItemSizeFromCard();
   },
 
   methods: {
@@ -63,15 +76,14 @@ export default {
       this.products = await this.GET_PRODUCTS_FROM_API();
     },
 
-    addToCart(data) {
-      this.ADD_TO_CART(data);
+    getItemSizeFromCard(currentSize) {
+      return (this.itemSize = currentSize);
     },
-
     sortByCategories(category) {
       this.selected = category.name;
       this.sortedProducts = [];
       this.products.forEach((item) => {
-        if (item.category === category.name) {
+        if (item.gender === category.name) {
           this.sortedProducts.push(item);
         } else if (!category.value) {
           this.sortedProducts = this.products.slice();
@@ -79,6 +91,10 @@ export default {
       });
 
       // Убрал (item.category_id === category.value) - с этим не работает сортировка
+    },
+
+    GetPopupData(id) {
+      return (this.popupId = id);
     },
   },
 };

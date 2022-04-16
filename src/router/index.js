@@ -4,7 +4,7 @@ import MainWrapper from '@/layouts/Main-wrapper';
 const routes = [
   {
     path: '/',
-    name: '',
+    name: 'main',
     component: MainWrapper,
 
     children: [
@@ -16,18 +16,28 @@ const routes = [
       {
         path: '/cart',
         name: 'cart',
-        component: ()=> import('@/views/Cart-page.vue')
+        component: () => import('@/views/Cart-page.vue'),
       },
       {
-        path: '/men',
-        name: 'men',
-        component: ()=> import('@/views/Men-page.vue')
+        path: '/:gender',
+        name: 'genderPage',
+        component: () => import('@/views/Category-page-view.vue'),
       },
       {
-        path: '/women',
-        name: 'women',
-        component: ()=> import('@/views/Women-page.vue')
-      }
+        path: '/:gender/:category',
+        name: 'categoryPage',
+        component: () => import('@/views/Category-page-view.vue'),
+      },
+      {
+        path: '/:gender/:subcategory',
+        name: 'subcategoryPage',
+        component: () => import('@/views/Category-page-view.vue'),
+      },
+      {
+        path: '/:id',
+        name: 'productPage',
+        component: () => import('@/views/Product-page-view.vue'),
+      },
     ],
   },
 ];
@@ -35,6 +45,11 @@ const routes = [
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes,
+
+  scrollBehavior() {
+    // always scroll to top
+    return { top: 0 };
+  },
 });
 
 export default router;
