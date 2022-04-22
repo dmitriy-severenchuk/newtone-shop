@@ -50,7 +50,6 @@
   &__item {
     text-decoration: none;
     width: 25%;
-    min-width: 320px;
     margin-right: 2rem;
     &:last-child {
       margin-right: 0;
@@ -59,11 +58,10 @@
         opacity: 1;
     }
     &-img {
+      display: block;
       width: 100%;
       object-fit: cover;
-      transform: translate(0, -2%);
       &__wrapper {
-        height: 470px;
         width: 100%;
         overflow: hidden;
         position: relative;
@@ -71,6 +69,7 @@
             display: block;
             content: '';
             width: 100%;
+            height: 100%;
             background: linear-gradient(45deg, #ffffffad, transparent);
             opacity: 0;
             transition: opacity ease .3s;
@@ -113,10 +112,13 @@
 
 .page__season__sale{
   width: 100%;
-  height: 360px;
-  background: url(./assets/images/season_sale.webp) center no-repeat;
   &-link{
     display: block;
     width: 100%;
+  }
+  &-image{
+    width: 100%;
+    max-width: 100%;
+    display: block;
   }
 }

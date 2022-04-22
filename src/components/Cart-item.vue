@@ -6,11 +6,16 @@
         alt="cloth"
         class="cart-item__image"
       />
+      <div class="cart-item__sale" id="cardSale" v-if="cartItemData.product.sale">
+        -{{ cartItemData.product.sale }}%
+      </div>
     </div>
     <div class="cart-item__content">
       <div class="cart-item__content__info">
         <h3 class="cart-item__title">{{ cartItemData.product.title }}</h3>
-        <div class="cart-item__size">Размер: <span>{{ cartItemData.size }}</span></div>
+        <div class="cart-item__size">
+          Размер: <span>{{ cartItemData.size }}</span>
+        </div>
         <div class="cart-item__price">
           {{ cartItemData.product.price * cartItemData.quantity }}.00 грн
         </div>

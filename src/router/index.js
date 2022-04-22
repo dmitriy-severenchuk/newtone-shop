@@ -29,7 +29,7 @@ const routes = [
         component: () => import('@/views/Category-page-view.vue'),
       },
       {
-        path: '/:gender/:subcategory',
+        path: '/:subcategory',
         name: 'subcategoryPage',
         component: () => import('@/views/Category-page-view.vue'),
       },

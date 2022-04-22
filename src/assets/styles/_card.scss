@@ -119,18 +119,19 @@
 }
 .card__footer {
   width: 100%;
-  height: $card__footer__min-height;
-  padding: 20px 0;
+  // height: $card__footer__min-height;
+  padding: 15px 0 10px;
   font-size: 0.95em;
   & a{
     text-decoration: none;
   }
   &-title {
     display: block;
-    max-width: 90%;
+  
     line-height: 1.3;
     color: #333;
     margin: 0 auto;
+    padding: 0 7px;
     &:hover {
       color: #b0b0b1;
     }

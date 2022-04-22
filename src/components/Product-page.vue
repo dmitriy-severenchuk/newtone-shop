@@ -3,8 +3,8 @@
     <transition name="popup__appear">
       <product-popup>
         <product-popup-main
-          :popup_data="filteredProducts[this.popupId]"
-          :popupItemSize="this.cardProductSize"
+          :popup_data="currentPopupItem"
+          :popupItemSize="cardProductSize"
         />
       </product-popup>
     </transition>
@@ -38,28 +38,28 @@
             <div class="product-page__size">
               <div
                 class="product-page__size-item"
-                :class="{ 'active-size': this.productSize == 'S' }"
+                :class="{ 'active-size': productSize == 'S' }"
                 @click="clickOnSizeButton($event)"
               >
                 S
               </div>
               <div
                 class="product-page__size-item"
-                :class="{ 'active-size': this.productSize == 'M' }"
+                :class="{ 'active-size': productSize == 'M' }"
                 @click="clickOnSizeButton($event)"
               >
                 M
               </div>
               <div
                 class="product-page__size-item"
-                :class="{ 'active-size': this.productSize == 'L' }"
+                :class="{ 'active-size': productSize == 'L' }"
                 @click="clickOnSizeButton($event)"
               >
                 L
               </div>
               <div
                 class="product-page__size-item"
-                :class="{ 'active-size': this.productSize == 'XL' }"
+                :class="{ 'active-size': productSize == 'XL' }"
                 @click="clickOnSizeButton($event)"
               >
                 XL
@@ -68,7 +68,7 @@
             <div class="product-page__add-to-cart__wrapper">
               <section
                 class="product-page__add-to-cart__section"
-                v-if="!this.productAlreadyInCart"
+                v-if="!productAlreadyInCart"
               >
                 <div class="product-page__counter">
                   <div class="product-page__counter__wrapper">
@@ -96,7 +96,7 @@
               <!-- Section Shows when Product in Cart -->
               <section
                 class="product-page__add-to-cart__section"
-                v-if="this.productAlreadyInCart"
+                v-if="productAlreadyInCart"
               >
                 <router-link :to="{ name: 'cart' }">
                   <div class="product-page__route-to-cart__button">
@@ -154,10 +154,9 @@ import Card from '@/components/Card';
 export default {
   data() {
     return {
-      products: [],
-      sortedProducts: [],
-      popupId: 0,
-      productItem: {},
+      currentPopupItem: null,
+
+      productItem: null,
       productSize: 'M',
 
       cardProductSize: 'М',
@@ -172,30 +171,26 @@ export default {
   },
   computed: {
     ...mapGetters(['CART', 'PRODUCTS', 'GET_POPUP']),
-    
+
+    currentUniqueIndex: function() {
+      return `${this.productItem.id}${this.productSize}`;
+    },
     productAlreadyInCart: function() {
       return this.CART.find((item) => {
-        if (
-          String(item.product.id + item.size) ==
-          String(this.productItem.id + this.productSize)
-        ) {
+        if (`${item.product.id}${item.size}` === this.currentUniqueIndex) {
           return true;
         }
       });
     },
 
     filteredProducts() {
-      if (this.sortedProducts.length) {
-        return this.sortedProducts;
-      } else {
-        return this.products;
-      }
+      return this.PRODUCTS.filter((item) => {
+        return (
+          item.gender === this.productItem.gender &&
+          item.id !== this.productItem.id
+        );
+      });
     },
-  },
-
-  mounted() {
-    
-    this.sortByCategories();
   },
   beforeMount() {
     this.getItemFromProducts();
@@ -216,22 +211,12 @@ export default {
     // Methods to get Catalog (Swiper + Card) ---- //
 
     GetPopupData(id) {
-      return (this.popupId = id);
+      const arr = this.filteredProducts[id];
+      this.currentPopupItem = arr;
     },
+
     getItemSizeFromCard(currentSize) {
-      return (this.cardProductSize = currentSize);
-    },
-    sortByCategories() {
-      this.PRODUCTS.filter((item) => {
-        if (
-          item.gender === this.productItem.gender &&
-          item.id !== this.productItem.id
-        ) {
-          return this.sortedProducts.push(item);
-        } else {
-          return null;
-        }
-      });
+      this.cardProductSize = currentSize;
     },
 
     // ---- Methods to get Catalog (Swiper + Card) //
@@ -254,7 +239,7 @@ export default {
         product: this.productItem,
         quantity: this.productItemQuantity,
         size: this.productSize,
-        uniqueCartItemIndex: String(this.productItem.id + this.productSize),
+        uniqueCartItemIndex: this.currentUniqueIndex,
       });
     },
   },

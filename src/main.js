@@ -18,7 +18,6 @@ import ProductPopupMain from '@/components/UI/Product-popup/Product-popup-main';
 library.add(fas);
 
 
-
 createApp(App)
   .use(store)
   .component('fa', FontAwesomeIcon)

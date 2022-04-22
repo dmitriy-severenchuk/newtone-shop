@@ -3,11 +3,15 @@
     <div class="card__inner">
       <div class="card__content-wrapper">
         <div class="card__content-link">
-          <img
-            :src="require('@/assets/images/Catalog/' + product_data.image)"
-            alt="cloth"
-            class="card__content-image"
-          />
+          <router-link
+            :to="{ name: 'productPage', params: { id: product_data.id } }"
+          >
+            <img
+              :src="require('@/assets/images/Catalog/' + product_data.image)"
+              alt="cloth"
+              class="card__content-image"
+            />
+          </router-link>
           <div
             class="card__content-sale"
             id="cardSale"
@@ -42,7 +46,7 @@
     </div>
     <div class="card__footer">
       <router-link
-        :to="{ name: 'productPage', params: { id: product_data.id} }"
+        :to="{ name: 'productPage', params: { id: product_data.id } }"
       >
         <span class="card__footer-title">
           {{ product_data.title }}
@@ -84,7 +88,7 @@ export default {
   methods: {
     ...mapActions(['SHOW_PRODUCT_POPUP']),
     chosenSize(event) {
-      this.chosenItemSize = event.target.innerHTML;
+      this.chosenItemSize = event.target.innerHTML.trim();
 
       this.$emit('chosenItemSize', this.chosenItemSize);
       this.clickToShowPopup();

@@ -16,37 +16,37 @@
       </h2>
       <div class="product-popup__price-wrapper">
         <span class="product-popup__price"
-          >{{ popup_data.price * popupItemQuantity }} ₽</span
+          >{{ popup_data.price * popupItemQuantity }} грн</span
         >
         <span class="product-popup__old-price" v-if="popup_data.sale_oldPrice">
-          {{ popup_data.sale_oldPrice * popupItemQuantity }}₽</span
+          {{ popup_data.sale_oldPrice * popupItemQuantity }} грн</span
         >
       </div>
       <div class="product-popup__size">
         <div
           class="product-popup__size-item"
-          :class="{ 'active-size': this.productSize == 'S' }"
+          :class="{ 'product-popup__active-size': productSize == 'S' }"
           @click="clickOnSizeButton($event)"
         >
           S
         </div>
         <div
           class="product-popup__size-item"
-          :class="{ 'active-size': this.productSize == 'M' }"
+          :class="{ 'product-popup__active-size': productSize == 'M' }"
           @click="clickOnSizeButton($event)"
         >
           M
         </div>
         <div
           class="product-popup__size-item"
-          :class="{ 'active-size': this.productSize == 'L' }"
+          :class="{ 'product-popup__active-size': productSize == 'L' }"
           @click="clickOnSizeButton($event)"
         >
           L
         </div>
         <div
           class="product-popup__size-item"
-          :class="{ 'active-size': this.productSize == 'XL' }"
+          :class="{ 'product-popup__active-size': productSize == 'XL' }"
           @click="clickOnSizeButton($event)"
         >
           XL
@@ -54,7 +54,7 @@
       </div>
       <section
         class="product-popup__add-to-cart__section"
-        v-if="!this.productAlreadyInCart"
+        v-if="!productAlreadyInCart"
       >
         <div class="product-popup__counter">
           <div class="product-popup__counter__wrapper">
@@ -82,7 +82,7 @@
 
       <section
         class="product-popup__add-to-cart__section"
-        v-if="this.productAlreadyInCart"
+        v-if="productAlreadyInCart"
       >
         <div @click="destroyPopup">
           <router-link :to="{ name: 'cart' }">
@@ -124,11 +124,14 @@ export default {
   computed: {
     ...mapGetters(['CART']),
 
+    currentUniqueIndex: function() {
+      return `${this.popup_data.id}${this.productSize}`
+    },
     productAlreadyInCart: function() {
       return this.CART.find((item) => {
         if (
-          String(item.product.id + item.size) ==
-          String(this.popup_data.id + this.productSize)
+         `${item.product.id}${item.size}` ===
+         this.currentUniqueIndex
         ) {
           return true;
         }
@@ -162,11 +165,11 @@ export default {
         product: this.popup_data,
         quantity: this.popupItemQuantity,
         size: this.productSize,
-        uniqueCartItemIndex: String(this.popup_data.id + this.productSize),
+        uniqueCartItemIndex: this.currentUniqueIndex,
       });
     },
   },
-  mounted() {
+  beforeMount() {
     this.getSizeFromCard();
   },
 };

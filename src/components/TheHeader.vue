@@ -17,12 +17,6 @@
           <a href="#" class="header__controls__icon">
             <span class="header__controls__icon-user"></span>
           </a>
-          <a href="#" class="header__controls__icon">
-            <span class="header__controls__icon-favourite"></span>
-            <span class="header__controls__icon-counter" id="favsCounter"
-              >0</span
-            >
-          </a>
           <router-link to="/cart" class="header__controls__icon">
             <span class="header__controls__icon-cart"></span>
             <span

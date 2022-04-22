@@ -1,2 +1,2 @@
 export { default } from './Product-popup';
-export {  } from './Product-popup-main';
+export {} from './Product-popup-main';

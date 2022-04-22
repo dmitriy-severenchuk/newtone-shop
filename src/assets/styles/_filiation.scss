@@ -1,7 +1,7 @@
 .filiation {
   width: 100%;
   color: #333333;
-  margin: 30px 0;
+  margin: 80px 0 30px;
 }
 .filiation__inner {
   display: flex;
@@ -9,7 +9,7 @@
 }
 .filiation__image-wrapper {
   width: 50%;
-  height: 400px;
+  max-height: 400px;
   overflow: hidden;
 }
 .filiation__image {

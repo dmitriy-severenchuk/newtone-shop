@@ -1,5 +1,6 @@
 @import 'fonts';
 
+
 html,
 body {
   height: 100%;
@@ -47,7 +48,9 @@ li {
   flex: 1 1 auto;
 }
 
+
 @import 'variables';
+
 @import 'header';
 @import 'main';
 @import 'card';
@@ -61,3 +64,6 @@ li {
 @import 'select';
 @import 'cart';
 @import 'cart-item';
+
+
+@import 'media';
