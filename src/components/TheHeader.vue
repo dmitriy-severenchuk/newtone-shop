@@ -14,9 +14,9 @@
           <button class="header__search-icon"></button>
         </form>
         <div class="header__controls">
-          <a href="#" class="header__controls__icon">
+          <router-link to="/login" class="header__controls__icon">
             <span class="header__controls__icon-user"></span>
-          </a>
+          </router-link>
           <router-link to="/cart" class="header__controls__icon">
             <span class="header__controls__icon-cart"></span>
             <span

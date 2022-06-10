@@ -2,6 +2,7 @@
   <product-popup>
     <product-popup-main :popup_data="currentItem" :popupItemSize="itemSize" />
   </product-popup>
+  <filter-panel v-if="showFilterPanel"/>
   <div class="category-page">
     <div class="container">
       <h2 class="category-page__title" v-if="pageGender">
@@ -11,6 +12,16 @@
       <h2 class="category-page__title" v-if="pageSubcategory">
         {{ pageSubcategory }}
       </h2>
+      <div class="category-page__filter__button-wrapper">
+        <button class="category-page__filter__button" @click="showFilterPanel = !showFilterPanel">
+          <span>Фильтр</span>
+          <img
+            src="@/assets/images/gear.svg"
+            alt="gear"
+            class="category-page__filter__button-icon"
+          />
+        </button>
+      </div>
       <section class="category-page__inner">
         <div class="attention" v-if="!filteredProducts.length">
           К сожалению данного типа товара нет на складе:(
@@ -42,6 +53,7 @@ export default {
       currentItem: null,
       itemSize: '',
       Error: false,
+      showFilterPanel: true
     };
   },
   components: {
@@ -69,9 +81,9 @@ export default {
               f.gender === this.pageGender && f.category === this.pageCategory
           )
         : // Subcategory
-        this.pageSubcategory 
+        this.pageSubcategory
         ? this.PRODUCTS.filter((f) => f.subcategory === this.pageSubcategory)
-        : this.PRODUCTS.filter((f) => f.sale)
+        : this.PRODUCTS.filter((f) => f.sale);
     },
   },
 

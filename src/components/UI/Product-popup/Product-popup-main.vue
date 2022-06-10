@@ -16,7 +16,7 @@
       </h2>
       <div class="product-popup__price-wrapper">
         <span class="product-popup__price"
-          >{{ popup_data.price * popupItemQuantity }} грн</span
+          >{{ (popup_data.price * popupItemQuantity)  }} грн</span
         >
         <span class="product-popup__old-price" v-if="popup_data.sale_oldPrice">
           {{ popup_data.sale_oldPrice * popupItemQuantity }} грн</span
@@ -123,21 +123,18 @@ export default {
   },
   computed: {
     ...mapGetters(['CART']),
-
     currentUniqueIndex: function() {
-      return `${this.popup_data.id}${this.productSize}`
+      return `${this.popup_data.id}${this.productSize}`;
     },
     productAlreadyInCart: function() {
       return this.CART.find((item) => {
-        if (
-         `${item.product.id}${item.size}` ===
-         this.currentUniqueIndex
-        ) {
+        if (`${item.product.id}${item.size}` === this.currentUniqueIndex) {
           return true;
         }
       });
     },
   },
+
   methods: {
     ...mapActions(['CLOSE_PRODUCT_POPUP']),
     destroyPopup() {

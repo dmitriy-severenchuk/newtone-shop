@@ -11,11 +11,19 @@
       <div class="filiation__content">
         <div class="filiation__title">Наши магазины в Москве</div>
         <div class="filiation__stations">
-          <div class="filiation__stations-item" @click="index = 0">
+          <div
+            class="filiation__stations-item"
+            :class="{ 'active-filiation': index === 0 }"
+            @click="index = 0"
+          >
             М:
             <span class="filiation__stations-item_name">Комсомольская</span>
           </div>
-          <div class="filiation__stations-item" @click="index = 1">
+          <div
+            class="filiation__stations-item"
+            :class="{ 'active-filiation': index === 1 }"
+            @click="index = 1"
+          >
             М:
             <span class="filiation__stations-item_name">Бауманская</span>
           </div>
@@ -64,3 +72,7 @@ export default {
   },
 };
 </script>
+
+<style lang="scss">
+
+</style>

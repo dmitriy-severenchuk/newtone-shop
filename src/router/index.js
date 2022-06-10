@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import MainWrapper from '@/layouts/Main-wrapper';
+import Authorization from '@/layouts/Authorization-wrappper';
 
 const routes = [
   {
@@ -11,12 +12,12 @@ const routes = [
       {
         path: '/',
         name: 'home-page',
-        component: () => import('@/views/Home-page.vue'),
+        component: () => import('@/views/Home-view.vue'),
       },
       {
         path: '/cart',
         name: 'cart',
-        component: () => import('@/views/Cart-page.vue'),
+        component: () => import('@/views/Cart-view.vue'),
       },
       {
         path: '/:gender',
@@ -38,8 +39,30 @@ const routes = [
         name: 'productPage',
         component: () => import('@/views/Product-page-view.vue'),
       },
+      {
+        path: '/user',
+        name: 'userPage',
+        component: () => import('@/views/User-page-view.vue'),
+      },
     ],
   },
+  {
+    path: '/login',
+    name: 'authorization',
+    component: Authorization,
+    children: [
+      {
+        path: '/login',
+        name: 'Login-page',
+        component: () => import('@/views/Login-view.vue'),
+      },
+      {
+        path: '/register',
+        name: 'Register-page',
+        component: () => import('@/views/Register-view.vue'),
+      },
+    ]
+  }
 ];
 
 const router = createRouter({

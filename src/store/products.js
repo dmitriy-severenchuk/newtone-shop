@@ -72,12 +72,6 @@ export default {
           method: 'GET',
         });
 
-        // const result = data.data.map((item) => {
-        //   item.price = item.price / 100;
-        //   item.sale_old_price = item.sale_old_price / 100;
-        //   return item;
-        // });
-
         commit('SET_PRODUCTS_TO_STATE', data);
         return data;
       } catch (e) {
@@ -133,10 +127,6 @@ export default {
       state.cart = state.cart.filter((cart_item) => {
         return cart_item.uniqueCartItemIndex !== uniqueCartItemIndex;
       });
-
-      // state.cart = state.cart.filter((cart_item) => {
-      //   return cart_item.uniqueCartItemIndex !== uniqueCartItemIndex;
-      // });
     },
     INCREMENT: (state, index) => {
       state.cart[index].quantity++;

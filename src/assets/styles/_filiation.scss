@@ -81,3 +81,10 @@
     text-decoration: underline;
   }
 }
+
+.active-filiation {
+  color: #333333;
+  &:after {
+    opacity: 1;
+  }
+}
