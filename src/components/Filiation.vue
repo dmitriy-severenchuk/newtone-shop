@@ -17,7 +17,7 @@
             @click="index = 0"
           >
             М:
-            <span class="filiation__stations-item_name">Комсомольская</span>
+            <span class="filiation__stations-item_name">Хрещатик</span>
           </div>
           <div
             class="filiation__stations-item"
@@ -25,7 +25,7 @@
             @click="index = 1"
           >
             М:
-            <span class="filiation__stations-item_name">Бауманская</span>
+            <span class="filiation__stations-item_name">Шулявская</span>
           </div>
         </div>
         <div class="filiation__address">

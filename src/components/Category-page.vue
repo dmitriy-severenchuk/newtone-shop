@@ -2,7 +2,7 @@
   <product-popup>
     <product-popup-main :popup_data="currentItem" :popupItemSize="itemSize" />
   </product-popup>
-  <filter-panel v-if="showFilterPanel"/>
+  <!-- <filter-panel v-if="showFilterPanel"/> -->
   <div class="category-page">
     <div class="container">
       <h2 class="category-page__title" v-if="pageGender">
@@ -22,10 +22,11 @@
           />
         </button>
       </div>
-      <section class="category-page__inner">
-        <div class="attention" v-if="!filteredProducts.length">
+       <div class="attention" v-if="!filteredProducts.length">
           К сожалению данного типа товара нет на складе:(
         </div>
+      <section class="category-page__inner">
+       
         <div
           class="category-page__item"
           v-for="(product, id) in filteredProducts"
@@ -51,7 +52,7 @@ export default {
   data() {
     return {
       currentItem: null,
-      itemSize: '',
+      itemSize: 'XL',
       Error: false,
       showFilterPanel: true
     };
@@ -93,8 +94,7 @@ export default {
       return (this.itemSize = currentSize);
     },
     GetPopupData(id) {
-      const arr = this.filteredProducts.filter((f) => f.id === id);
-      this.currentItem = arr[0];
+      this.currentItem = this.filteredProducts[id]
     },
   },
 

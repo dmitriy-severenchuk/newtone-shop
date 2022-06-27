@@ -8,6 +8,7 @@
 }
 .category-page__filter__button-wrapper {
   display: inline-block;
+  margin-bottom: 20px;
 }
 .category-page__filter__button {
   display: flex;
@@ -28,16 +29,17 @@
   }
 }
 .category-page__inner {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
-.category-page__item {
-    width: 23%;
-//   margin: 8px 8px 10px 8px;
-}
+  display: grid;
+  grid-template-columns: repeat((4, 1fr));
+  grid-gap: 30px;
+
+}   
 .category-page__card {
   text-align: center;
   width: 100%;
   max-width: 100%;
+}
+
+.attention{
+  text-align: center;
 }

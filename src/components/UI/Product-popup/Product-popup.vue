@@ -7,7 +7,7 @@
         </button>
       </div>
       <div class="product-popup__inner">
-        <slot> </slot>
+        <slot></slot>
       </div>
     </div>
   </div>

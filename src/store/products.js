@@ -12,15 +12,15 @@ export default {
     filiations: [
       {
         image: '1.webp',
-        adress: 'Новорязанская ул., 18, стр. 11',
-        phone_number: '7 800 555-10-61',
+        adress: 'г. Киев, ул. Сковороды, д. 5',
+        phone_number: '+380 95 555 1236',
         timetable: 'пн-пт 10:00-19:00',
         id: 1,
       },
       {
         image: '2.webp',
-        adress: 'г. Москва, ул. Новорязанская, 18, стр. 11',
-        phone_number: '7 495 649-83-14',
+        adress: 'г. Киев, ул. Политехническая, д. 18, стр. 11',
+        phone_number: '+380 96 712 4256',
         timetable: 'пн-пт 10:00-20:00',
         id: 2,
       },

@@ -103,9 +103,7 @@
   color: #ffffff !important;
 }
 
-.add-to-cart__section {
-  margin-top: 20px;
-}
+
 .product-popup__counter__wrapper {
   background-color: #525665;
   margin-bottom: 10px;
@@ -143,6 +141,7 @@
   margin-top: 20px;
 }
 .product-popup__add-to-cart__section{
+  
   & a{
     text-decoration: none;
   }
@@ -157,7 +156,7 @@
   border: 2px solid #5256658f;
   font-size: 18px;
   padding: 10px 15px;
-  margin-top: 40px;
+  margin-top: 75px;
   &:hover {
     background-color: rgba(41, 149, 41, 0.125);
   }
