@@ -1,11 +1,11 @@
-FROM node:16 as vue-build
+FROM node:16 AS build
 WORKDIR /app
-COPY . ./
+COPY package.json ./
 RUN npm install
+COPY . .
 RUN npm run build
 
-FROM nginx:alpine
-COPY nginx.conf /etc/nginx/conf.d/default.conf
-COPY --from=vue-build /app/dist /usr/share/nginx/html
-EXPOSE 8080
+FROM nginx:stable-alpine AS production-stage
+COPY --from=build /app/dist /usr/share/nginx/html
+EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]
