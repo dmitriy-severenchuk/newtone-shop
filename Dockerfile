@@ -1,8 +1,8 @@
 FROM node:16 as vue-build
 WORKDIR /app
 COPY . ./
-RUN rm yarn.lock && yarn
-RUN yarn build
+RUN npm install
+RUN npm run build
 
 FROM nginx:alpine
 COPY nginx.conf /etc/nginx/conf.d/default.conf
