@@ -23,5 +23,5 @@ jobs:
             git pull origin master
 
             docker build -t newtone-shop .
-            docker run -it -p 8080:80 --rm --name newtone-shop-app newtone-shop
+            docker run -p 8080:80 --rm --name newtone-shop-app newtone-shop
             
