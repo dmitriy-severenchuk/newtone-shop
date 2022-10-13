@@ -20,18 +20,18 @@ const routes = [
         component: () => import('@/views/Cart-view.vue'),
       },
       {
-        path: '/:gender',
-        name: 'genderPage',
-        component: () => import('@/views/Category-page-view.vue'),
-      },
-      {
-        path: '/:gender/:category',
+        path: '/:category',
         name: 'categoryPage',
         component: () => import('@/views/Category-page-view.vue'),
       },
       {
-        path: '/:subcategory',
-        name: 'subcategoryPage',
+        path: '/:category/:type',
+        name: 'typePage',
+        component: () => import('@/views/Category-page-view.vue'),
+      },
+      {
+        path: '/:subtype',
+        name: 'subtypePage',
         component: () => import('@/views/Category-page-view.vue'),
       },
       {
@@ -61,8 +61,8 @@ const routes = [
         name: 'Register-page',
         component: () => import('@/views/Register-view.vue'),
       },
-    ]
-  }
+    ],
+  },
 ];
 
 const router = createRouter({

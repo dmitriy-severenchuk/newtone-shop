@@ -10,19 +10,10 @@
       <Select :selected="selected" @select="changeCategory" />
       <h2 class="catalog__title">{{ selected }}</h2>
       <h3 class="catalog__subtitle">Новинки</h3>
-      <swiper
-        class="swiper"
-        :slides-per-view="5"
-        :space-between="20"
-        :breakpoints="swiperOptions.breakpoints"
-        :navigation="{ clickable: true }"
-      >
+      <swiper class="swiper" :slides-per-view="5" :space-between="20" :breakpoints="swiperOptions.breakpoints"
+        :navigation="{ clickable: true }">
         <swiper-slide v-for="(product, id) in filteredProducts" :key="id">
-          <Card
-            :product_data="product"
-            @chosenItemSize="getItemSizeFromCard"
-            @popup_data="GetPopupData(id)"
-          />
+          <Card :product_data="product" @chosenItemSize="getItemSizeFromCard" @popup_data="GetPopupData(id)" />
         </swiper-slide>
       </swiper>
     </div>
@@ -50,7 +41,7 @@ export default {
       itemSize: '',
       swiperOptions: {
         breakpoints: {
-          320: {
+          1: {
             slidesPerView: 1,
             spaceBetween: 15,
           },
@@ -62,12 +53,12 @@ export default {
             slidesPerView: 3,
             spaceBetween: 17,
           },
-        
+
           851: {
             slidesPerView: 4,
             spaceBetween: 15,
           },
-          1201: {
+          1231: {
             slidesPerView: 5,
             spaceBetween: 20,
           },
@@ -82,7 +73,7 @@ export default {
     filteredProducts() {
       return this.selected === 'Все'
         ? this.PRODUCTS
-        : this.PRODUCTS.filter((f) => f.gender === this.selected);
+        : this.PRODUCTS.filter((f) => f.category === this.selected);
     },
   },
 
@@ -109,4 +100,6 @@ export default {
 };
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+
+</style>

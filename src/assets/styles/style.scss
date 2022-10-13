@@ -1,10 +1,9 @@
-@import 'fonts';
-
+@import "fonts";
 
 html,
 body {
   height: 100%;
-  font-family: 'Roboto-Regular';
+  font-family: "Roboto-Regular";
   background-color: #ffff;
   margin: 0;
   padding: 0;
@@ -14,7 +13,7 @@ body {
   width: 100%;
   max-width: 1430px;
   margin: 0 auto;
-  padding: 0 15px;
+  padding: 0 20px;
 }
 
 *,
@@ -48,22 +47,21 @@ li {
   flex: 1 1 auto;
 }
 
+@import "variables";
+@import "authorization";
+@import "header";
+@import "main";
+@import "card";
+@import "swiper";
+@import "catalog";
+@import "category-page";
+@import "product-popup";
+@import "product-page";
+@import "filiation";
+@import "footer";
+@import "select";
+@import "cart";
+@import "cart-item";
+@import "filterpanel";
 
-@import 'variables';
-@import 'authorization';
-@import 'header';
-@import 'main';
-@import 'card';
-@import 'swiper';
-@import 'catalog';
-@import 'category-page';
-@import 'product-popup';
-@import 'product-page';
-@import 'filiation';
-@import 'footer';
-@import 'select';
-@import 'cart';
-@import 'cart-item';
-
-
-@import 'media';
+@import "media";

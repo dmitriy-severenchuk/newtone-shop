@@ -42,19 +42,17 @@
 
 .product-popup__main {
   display: flex;
-  justify-content:center;
+  justify-content: center;
   margin-top: 5px;
 }
 
 .product-popup__image-wrapper {
+  background-size: cover;
+  background-position: center;
+  height: 300px;
   position: relative;
-  width: 250px;
-  max-width: 250px;
-}
-.product-popup__image {
-  display: block;
-  width: 100%;
-  max-width: 100%;
+  width: 200px;
+  max-width: 200px;
 }
 .product-popup__sale {
   display: inline-block;
@@ -103,33 +101,30 @@
   color: #ffffff !important;
 }
 
-
 .product-popup__counter__wrapper {
   background-color: #525665;
   margin-bottom: 10px;
 }
 .product-popup__counter {
   display: flex;
+  &__quantity {
+    color: #ffffff;
+    padding: 4px 7px;
+    font-size: 16px;
+  }
   &__button {
     display: inline-block;
     background-color: #525665;
     border: 0;
+    cursor: pointer;
+    text-align: center;
+    color: #ffffff;
+    font-size: 18px;
+    padding: 5px 9px;
+    &:hover {
+      background-color: rgb(136, 136, 136);
+    }
   }
-}
-
-.product-popup__counter__button {
-  cursor: pointer;
-  text-align: center;
-  color: #ffffff;
-  font-size: 16px;
-  padding: 4px 7px;
-  &:hover {
-    background-color: rgb(136, 136, 136);
-  }
-}
-.product-popup__counter__quantity {
-  color: #ffffff;
-  padding: 4px 7px;
 }
 .product-popup__button {
   width: 100%;
@@ -139,10 +134,12 @@
   font-size: 18px;
   padding: 10px 15px;
   margin-top: 20px;
+  &:hover {
+    background-color: #3f424d;
+  }
 }
-.product-popup__add-to-cart__section{
-  
-  & a{
+.product-popup__add-to-cart__section {
+  & a {
     text-decoration: none;
   }
 }
@@ -170,7 +167,6 @@
   }
 }
 
-
 // Animation
 
 .popup__appear-enter-from {
@@ -180,5 +176,5 @@
   opacity: 1;
 }
 .popup__appear-enter-active {
-  transition: all .05s;
+  transition: all 0.05s;
 }

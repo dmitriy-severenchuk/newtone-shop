@@ -15,7 +15,8 @@
     background-color: #525665;
     margin-top: 0 !important;
     position: absolute;
-    top: calc(50% - 1rem - #{$card__footer__min-height}/2) !important;
+    // top: calc(50% - 1rem - #{$card__footer__min-height}/2) !important;
+    top: 220px !important;
     z-index: 10 !important;
     display: flex;
     cursor: default !important;

@@ -1,6 +1,5 @@
 .card {
   width: 100%;
-  
   display: flex;
   flex-direction: column;
   &:hover &__content-footer {
@@ -13,18 +12,25 @@
   }
 }
 .card__content-link {
+
   display: block;
   width: 100%;
 }
+.card__content-image{
+  background-position: center;
+  background-size: cover;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
 .card__content-wrapper {
+  height: 440px;
   overflow: hidden;
   position: relative;
   z-index: 1;
-}
-.card__content-image {
-  display: block;
-  width: 100%;
-  object-fit: cover;
 }
 .card__content-sale {
   display: inline-block;

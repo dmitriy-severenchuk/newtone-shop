@@ -4,17 +4,12 @@
       <div class="cart__header">
         <h2 class="cart__title">Корзина</h2>
         <div class="cart__total-price">
-          <strong>Итого:</strong> {{ CART_TOTAL_PRICE }}.00 грн
+          <strong>Итого:</strong> {{ CART_TOTAL_PRICE/100 }} грн
         </div>
       </div>
       <div class="cart__inner">
-        <CartItem
-          v-for="(item, index) in CART"
-          :key="index"
-          :cartItemData="item"
-          @increment="increment(index)"
-          @decrement="decrement(index)"
-        />
+        <CartItem v-for="(item, index) in CART" :key="index" :cartItemData="item" @increment="increment(index)"
+          @decrement="decrement(index)" />
       </div>
     </div>
   </div>
@@ -30,10 +25,10 @@ export default {
   },
   methods: {
     ...mapActions(['INCREMENT_CART_ITEM', 'DECREMENT_CART_ITEM']),
-    decrement(index){
+    decrement(index) {
       this.DECREMENT_CART_ITEM(index);
     },
-    increment(index){
+    increment(index) {
       this.INCREMENT_CART_ITEM(index);
     }
   },
@@ -44,4 +39,6 @@ export default {
 };
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+
+</style>

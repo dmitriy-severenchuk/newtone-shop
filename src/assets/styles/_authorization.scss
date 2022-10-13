@@ -10,6 +10,31 @@
   padding: 15px;
 }
 
+// Header
+
+.auth-header {
+  background-color: $dark__grey;
+}
+.auth-header__inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+.auth-header__button {
+  text-decoration: none;
+  color: #ffffff;
+  margin: 0 25px;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+// Authorization Main
+
+.authorization-wrapper__content {
+  padding-bottom: 100px;
+}
 .authorization__title {
   text-align: center;
   font-weight: 500;
@@ -44,7 +69,8 @@
   padding: 20px 20px 20px;
   border-radius: 6px;
   box-shadow: 0px 0px 2px #7a7a7a;
-  margin-top: 50px;
+  margin-top: 30px;
+  margin-bottom: 30px;
   &__item {
     width: 100%;
     margin-bottom: 15px;
@@ -66,7 +92,7 @@
     }
   }
   &__button {
-    font-family: 'Raleway-Medium';
+    font-family: "Raleway-Medium";
     width: 100%;
     color: #ffffff;
     background-color: rgb(25, 133, 20);
@@ -90,6 +116,14 @@
     }
   }
 }
+
+.authorization__link {
+  color: #333333;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
 //Validation Error
 .authorization__input-error {
   display: block;

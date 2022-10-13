@@ -28,24 +28,34 @@
 .footer__contacts__adress {
   margin-top: 10px;
 }
-.footer__logo{
-    &-img{
-        display: block;
-        width: 160px;
-        object-fit: cover;
-    }
+.footer__logo {
+  &-img {
+    display: block;
+    width: 160px;
+    object-fit: cover;
+  }
 }
-.footer__box{
-    text-align: right;
+.footer__box {
+  text-align: right;
 }
-.footer__socials{
-    margin-bottom: 40px;
-    &-link{
-        margin-right: 25px;
-    }
+.footer__socials {
+  display: flex;
+  margin-bottom: 40px;
+  &-link {
+    margin-right: 25px;
+  }
+  &-img {
+    display: block;
+  }
 }
-.footer__payment{
-    &-link{
-        margin-right: 25px;
-    }
+.footer__payment {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  &-link {
+    margin-right: 25px;
+  }
+  &-img {
+    display: block;
+  }
 }

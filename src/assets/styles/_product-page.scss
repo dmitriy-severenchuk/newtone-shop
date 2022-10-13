@@ -5,9 +5,13 @@
   display: flex;
 }
 .product-page__image-wrapper {
+  background-position: center;
+  background-size: cover;
   position: relative;
   max-width: 100%;
   min-width: 25%;
+  width: 350px;
+  height: 550px;
 }
 .product-page__image {
   display: block;
@@ -27,6 +31,7 @@
 }
 .product-page__content-box {
   padding-left: 40px;
+  width: 75%;
 }
 .product-page__price-wrapper {
   margin: 10px 0 20px;
@@ -86,7 +91,7 @@
   }
 }
 
-.product-page__add-to-cart__wrapper{
+.product-page__add-to-cart__wrapper {
   display: flex;
   align-items: center;
   height: 150px;
@@ -107,8 +112,10 @@
   font-size: 18px;
   padding: 15px;
   margin-top: 20px;
+  &:hover {
+    background-color: #3f424d;
+  }
 }
-
 
 .product-page__add-to-cart__section {
   width: 100%;
@@ -146,13 +153,13 @@
   margin: 25px 0;
 }
 
-.product-page__catalog__inner{
+.product-page__catalog__inner {
   text-align: center;
   margin: 80px 0 100px;
 }
-.product-page__catalog__title{
+.product-page__catalog__title {
   text-align: center;
-  font-family: 'Jost-SemiBold';
+  font-family: "Jost-SemiBold";
   font-weight: 400;
   font-size: 22px;
   margin-bottom: 30px;

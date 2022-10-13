@@ -68,11 +68,15 @@ export default {
   actions: {
     async GET_PRODUCTS_FROM_API({ commit }) {
       try {
-        const { data } = await axios('http://localhost:3000/products', {
-          method: 'GET',
-        });
+        const { data } = await axios(
+          'http://159.89.235.180:3000/api/products/',
+          {
+            method: 'GET',
+          }
+        );
 
         commit('SET_PRODUCTS_TO_STATE', data);
+        // console.log(data);
         return data;
       } catch (e) {
         console.log(e);
@@ -106,7 +110,7 @@ export default {
 
   mutations: {
     SET_PRODUCTS_TO_STATE: (state, products) => {
-      state.products = products;
+      state.products = products.data;
     },
 
     SET_TO_CART: (state, { product, quantity, size, uniqueCartItemIndex }) => {
