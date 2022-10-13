@@ -76,7 +76,6 @@ export default {
         );
 
         commit('SET_PRODUCTS_TO_STATE', data);
-        // console.log(data);
         return data;
       } catch (e) {
         console.log(e);

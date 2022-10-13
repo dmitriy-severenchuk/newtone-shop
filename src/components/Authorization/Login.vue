@@ -40,18 +40,12 @@
 import useVuelidate from '@vuelidate/core';
 import { required, minLength, email } from '@vuelidate/validators';
 import axios from 'axios';
-import { reactive } from 'vue';
+import { reactive, computed } from 'vue';
 
 // import { useRouter } from 'vue-router';
 
 
 export default {
-  computed: {
-    isDisableButton() {
-      return this.state.password.length && this.state.email.length;
-    }
-  },
-
   setup() {
     const state = reactive({
       email: '',
@@ -61,9 +55,12 @@ export default {
       email: { required, email },
       password: { required, minLength: minLength(6) },
     };
+    const isDisableButton = computed(() => {
+      return state.password.length && state.email.length;
+    });
 
     const v$ = useVuelidate(rules, state);
-    return { state, v$ };
+    return { state, v$, isDisableButton };
   },
   methods: {
 

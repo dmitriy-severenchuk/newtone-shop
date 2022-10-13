@@ -99,8 +99,6 @@ export default {
     return { state, v$ };
   },
   methods: {
-
-    // Get a link from Andrew to POST register data to the Backend
     async register() {
       this.v$.$validate();
       if (!this.v$.$error) {
@@ -110,18 +108,14 @@ export default {
           email: this.state.email,
           password: this.state.password,
           phone: '090909090',
-          // password_confirm: this.state.password_confirm,
           role: 'ADMIN'
         }
-        console.log(data)
 
         await axios.post('http://159.89.235.180:3000/auth/sign-up', data);
 
-
-
         this.$router.push('/login');
       } else {
-        return console.log('Ошибка заполения формы!');
+        return alert('Ошибка заполения формы!');
       }
     },
   },
