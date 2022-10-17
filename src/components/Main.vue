@@ -88,22 +88,11 @@
 <script>
 import Catalog from '@/components/Catalog';
 import Filiation from '@/components/Filiation';
-import axios from 'axios';
 
 export default {
   components: {
     Catalog,
     Filiation,
   },
-
-  async created() {
-    const response = await axios.get('user', {
-      headers: {
-        Authorization: 'Bearer' + localStorage.getItem('token')
-      }
-    })
-
-    console.log(response);
-  }
 };
 </script>

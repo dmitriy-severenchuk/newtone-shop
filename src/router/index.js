@@ -1,6 +1,25 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import MainWrapper from '@/layouts/Main-wrapper';
 import Authorization from '@/layouts/Authorization-wrappper';
+import store from '../store';
+
+// Authorization
+
+const ifNotAuthenticated = (to, from, next) => {
+  if (!store.getters.isAuthenticated) {
+    next();
+    return;
+  }
+  next('/');
+};
+
+const ifAuthenticated = (to, from, next) => {
+  if (store.getters.isAuthenticated) {
+    next();
+    return;
+  }
+  next('/login');
+};
 
 const routes = [
   {
@@ -20,22 +39,22 @@ const routes = [
         component: () => import('@/views/Cart-view.vue'),
       },
       {
-        path: '/:category',
+        path: '/category/:category',
         name: 'categoryPage',
         component: () => import('@/views/Category-page-view.vue'),
       },
       {
-        path: '/:category/:type',
+        path: '/category/:category/type/:type',
         name: 'typePage',
         component: () => import('@/views/Category-page-view.vue'),
       },
       {
-        path: '/:subtype',
+        path: '/subtype/:subtype',
         name: 'subtypePage',
         component: () => import('@/views/Category-page-view.vue'),
       },
       {
-        path: '/:id',
+        path: '/product/:id',
         name: 'productPage',
         component: () => import('@/views/Product-page-view.vue'),
       },
@@ -43,6 +62,7 @@ const routes = [
         path: '/user',
         name: 'userPage',
         component: () => import('@/views/User-page-view.vue'),
+        beforeEnter: ifAuthenticated,
       },
     ],
   },
@@ -55,6 +75,7 @@ const routes = [
         path: '/login',
         name: 'Login-page',
         component: () => import('@/views/Login-view.vue'),
+        beforeEnter: ifNotAuthenticated,
       },
       {
         path: '/register',

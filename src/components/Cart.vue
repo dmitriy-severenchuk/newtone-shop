@@ -10,6 +10,7 @@
       <div class="cart__inner">
         <CartItem v-for="(item, index) in CART" :key="index" :cartItemData="item" @increment="increment(index)"
           @decrement="decrement(index)" />
+        <button class="cart__clear-button" @click="clearCart">Очистить корзину</button>
       </div>
     </div>
   </div>
@@ -24,17 +25,19 @@ export default {
     CartItem,
   },
   methods: {
-    ...mapActions(['INCREMENT_CART_ITEM', 'DECREMENT_CART_ITEM']),
+    ...mapActions(['INCREMENT_CART_ITEM', 'DECREMENT_CART_ITEM', 'СLEAR_CART']),
     decrement(index) {
       this.DECREMENT_CART_ITEM(index);
     },
     increment(index) {
       this.INCREMENT_CART_ITEM(index);
+    },
+    clearCart() {
+      this.СLEAR_CART()
     }
   },
   computed: {
     ...mapGetters(['CART', 'CART_TOTAL_PRICE']),
-
   },
 };
 </script>

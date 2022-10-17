@@ -1,6 +1,6 @@
 import { createStore } from 'vuex';
-import auth from './AuthAPI/auth';
 import products from './products';
+import auth from './AuthAPI/auth';
 
 export default createStore({
   modules: {

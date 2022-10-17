@@ -85,7 +85,9 @@ export default {
     ADD_TO_CART({ commit }, { product, quantity, size, uniqueCartItemIndex }) {
       commit('SET_TO_CART', { product, quantity, size, uniqueCartItemIndex });
     },
-
+    СLEAR_CART({ commit }) {
+      commit('CLEAR_CART');
+    },
     REMOVE_PRODUCT_FROM_CART({ commit }, uniqueCartItemIndex) {
       commit('REMOVE_PRODUCT_FROM_CART', uniqueCartItemIndex);
     },
@@ -125,7 +127,9 @@ export default {
 
       state.cart.push({ product, quantity, size, uniqueCartItemIndex });
     },
-
+    CLEAR_CART: (state) => {
+      return (state.cart.length = 0);
+    },
     REMOVE_PRODUCT_FROM_CART: (state, uniqueCartItemIndex) => {
       state.cart = state.cart.filter((cart_item) => {
         return cart_item.uniqueCartItemIndex !== uniqueCartItemIndex;

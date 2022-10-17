@@ -1,10 +1,13 @@
 <template>
   <div class="authorization">
     <div class="container">
+      <router-link to="/" class="back-button">
+        Main page
+      </router-link>
       <div class="authorization__inner">
-        <div class="authorization__logo-wrapper">
+        <router-link to="/" class="authorization__logo-wrapper">
           <img src="@/assets/images/logo.svg" alt="NewTone" class="authorization__logo" />
-        </div>
+        </router-link>
 
         <form class="authorization__form" @submit.prevent="login">
           <h1 class="authorization__title">Авторизация</h1>
@@ -39,10 +42,7 @@
 <script>
 import useVuelidate from '@vuelidate/core';
 import { required, minLength, email } from '@vuelidate/validators';
-import axios from 'axios';
 import { reactive, computed } from 'vue';
-
-// import { useRouter } from 'vue-router';
 
 
 export default {
@@ -64,18 +64,16 @@ export default {
   },
   methods: {
 
-    async login() {
+    login() {
       this.v$.$validate();
 
       if (!this.v$.$error) {
-        const response = await axios.post('http://159.89.235.180:3000/auth/sign-in', {
+        this.$store.dispatch('AUTH_REQUEST', {
           email: this.state.email,
           password: this.state.password
+        }).then(() => {
+          this.$router.push('/')
         })
-
-        localStorage.setItem('token', response.data.token);
-
-        await this.$router.push('/');
       }
     },
   }

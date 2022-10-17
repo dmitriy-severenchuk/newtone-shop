@@ -2,13 +2,13 @@
   <div class="authorization">
     <div class="container">
       <router-link to="/" class="back-button">
-        Back
+        Main page
       </router-link>
 
       <div class="authorization__inner">
-        <div class="authorization__logo-wrapper">
+        <router-link to="/" class="authorization__logo-wrapper">
           <img src="@/assets/images/logo.svg" alt="NewTone" class="authorization__logo" />
-        </div>
+        </router-link>
 
         <form action="POST" class="authorization__form" @submit.prevent="register">
           <h1 class="authorization__title">Регистрация</h1>
@@ -112,7 +112,6 @@ export default {
         }
 
         await axios.post('http://159.89.235.180:3000/auth/sign-up', data);
-
         this.$router.push('/login');
       } else {
         return alert('Ошибка заполения формы!');

@@ -8,17 +8,18 @@
     <div class="container">
       <div class="product-page__inner">
         <div class="product-page__flex-wrapper">
-          <div class="product-page__image-wrapper" :style="{ 'background-image': 'url(' + productItem.image + ')' }">
-            <div class="product-page__sale" id="sale" v-if="productItem.sale">
-              -{{ productItem.sale }}%
+          <div class="product-page__image-wrapper"
+            :style="{ 'background-image': 'url(' + getItemFromProducts.image + ')' }">
+            <div class="product-page__sale" id="sale" v-if="getItemFromProducts.sale">
+              -{{ getItemFromProducts.sale }}%
             </div>
           </div>
           <div class="product-page__content-box">
-            <h1 class="product-page__title">{{ productItem.title }}</h1>
+            <h1 class="product-page__title">{{ getItemFromProducts.title }}</h1>
             <div class="product-page__price-wrapper">
-              <span class="product-page__price">{{ productItem.price/100 * productItemQuantity }} грн</span>
-              <span class="product-page__old-price" v-if="productItem.sale_old_price">
-                {{ productItem.sale_old_price/100 * productItemQuantity }} грн</span>
+              <span class="product-page__price">{{ getItemFromProducts.price/100 * productItemQuantity }} грн</span>
+              <span class="product-page__old-price" v-if="getItemFromProducts.sale_old_price">
+                {{ getItemFromProducts.sale_old_price/100 * productItemQuantity }} грн</span>
             </div>
 
             <div class="product-page__size">
@@ -127,8 +128,6 @@ export default {
   data() {
     return {
       currentPopupItem: null,
-
-      productItem: null,
       productSize: 'M',
 
       cardProductSize: 'М',
@@ -147,7 +146,6 @@ export default {
             slidesPerView: 3,
             spaceBetween: 17,
           },
-
           851: {
             slidesPerView: 4,
             spaceBetween: 15,
@@ -170,11 +168,11 @@ export default {
     ...mapGetters(['CART', 'PRODUCTS', 'GET_POPUP']),
 
     onItemChange: function () {
-      return this.productItem;
+      return this.getItemFromProducts;
     },
 
     currentUniqueIndex: function () {
-      return `${this.productItem.id}${this.productSize}`;
+      return `${this.getItemFromProducts.id}${this.productSize}`;
     },
     productAlreadyInCart: function () {
       return this.CART.find((item) => {
@@ -184,26 +182,29 @@ export default {
       });
     },
 
-    filteredProducts() {
+    filteredProducts: function () {
       return this.PRODUCTS.filter((item) => {
         return (
-          item.category === this.productItem.category &&
-          item.id !== this.productItem.id
+          item.category === this.getItemFromProducts.category &&
+          item.id !== this.getItemFromProducts.id
         );
       });
     },
+    getItemFromProducts: function () {
+      return this.PRODUCTS.find((item) => item.id === this.$route.params.id)
+    }
   },
   methods: {
     ...mapActions(['ADD_TO_CART']),
 
-    async getItemFromProducts() {
+    // async getItemFromProducts() {
 
-      await this.PRODUCTS.find((item) => {
-        if (item.id === this.$route.params.id) {
-          this.productItem = item;
-        }
-      });
-    },
+    //   await this.PRODUCTS.find((item) => {
+    //     if (item.id === this.$route.params.id) {
+    //       this.productItem = item;
+    //     }
+    //   });
+    // },
 
     // Methods to get Catalog (Swiper + Card) ---- //
 
@@ -233,7 +234,7 @@ export default {
 
     addToCart() {
       this.$store.dispatch('ADD_TO_CART', {
-        product: this.productItem,
+        product: this.getItemFromProducts,
         quantity: this.productItemQuantity,
         size: this.productSize,
         uniqueCartItemIndex: this.currentUniqueIndex,
@@ -241,14 +242,9 @@ export default {
     },
   },
   beforeMount() {
-    this.getItemFromProducts();
     this.getItemSizeFromCard();
   },
-  watch: {
-    $route() {
-      this.getItemFromProducts();
-    },
-  },
+
 
 };
 </script>
