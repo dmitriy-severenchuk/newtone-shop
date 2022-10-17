@@ -197,17 +197,6 @@ export default {
   methods: {
     ...mapActions(['ADD_TO_CART']),
 
-    // async getItemFromProducts() {
-
-    //   await this.PRODUCTS.find((item) => {
-    //     if (item.id === this.$route.params.id) {
-    //       this.productItem = item;
-    //     }
-    //   });
-    // },
-
-    // Methods to get Catalog (Swiper + Card) ---- //
-
     GetPopupData(id) {
       const arr = this.filteredProducts[id];
       this.currentPopupItem = arr;
