@@ -24,16 +24,15 @@ export default {
         })
           .then((resp) => {
             const token = resp.data.token;
-            localStorage.setItem('user-token', token); // store the token in localstorage
+            localStorage.setItem('user-token', token);
 
             axios.defaults.headers.common['Authorization'] = token;
             commit('AUTH_SUCCESS', resp);
-            // dispatch('USER_REQUEST');
             resolve(resp);
           })
           .catch((err) => {
             commit('AUTH_ERROR', err);
-            localStorage.removeItem('user-token'); // if the request fails, remove any possible user token if possible
+            localStorage.removeItem('user-token');
             reject(err);
           });
       });
