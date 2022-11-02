@@ -69,7 +69,7 @@ export default {
     async GET_PRODUCTS_FROM_API({ commit }) {
       try {
         const { data } = await axios(
-          'http://159.89.235.180:3000/api/products/',
+          'api/products/',
           {
             method: 'GET',
           }

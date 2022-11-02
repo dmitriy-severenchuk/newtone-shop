@@ -1,2 +1,4 @@
-import './swiper';
-import './ui';
+import "./swiper";
+import "./fontawesome";
+import "./axios";
+import "./ui";
