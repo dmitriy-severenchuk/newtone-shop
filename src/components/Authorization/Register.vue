@@ -150,7 +150,7 @@ export default {
           role: "ADMIN",
         };
 
-        await axios.post("auth/sign-up", data);
+        await axios.post("http://159.89.235.180:3000/auth/sign-up", data);
         this.$router.push("/login");
       } else {
         return alert("Ошибка заполения формы!");

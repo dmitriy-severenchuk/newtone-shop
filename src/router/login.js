@@ -6,16 +6,12 @@ export default {
   name: "authorization",
   component: AuthorizationLayout,
   beforeEnter: (to, from, next) => {
-    const isLogged = store.getters["auth/getIsLogin"];
+    const isLogged = store.getters["getIsLogin"];
 
     if (isLogged) {
-      if (to.name === "content.home") {
-        next();
-      } else {
-        next({
-          name: "content.home",
-        });
-      }
+      next({
+        name: "content",
+      });
     } else {
       next();
     }

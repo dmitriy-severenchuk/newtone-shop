@@ -7,14 +7,13 @@ const routes = [
   {
     path: "/",
     name: "index",
-
     beforeEnter: (to, form, next) => {
       store.dispatch("checkUserLogin");
 
       next();
     },
 
-    children: [Login, Content],
+    children: [Content, Login],
   },
 ];
 

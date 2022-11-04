@@ -24,13 +24,13 @@ export default {
         data: { email, password },
       });
 
-      dispatch("setToken", data.token);
+      dispatch("setToken", data.access_token);
 
       return data;
     },
 
-    setToken({ commit }, auth_token) {
-      localStorage.setItem("user-token", auth_token);
+    setToken({ commit }, access_token) {
+      localStorage.setItem("user-token", access_token);
       setAuthHeaders();
 
       commit(SET_USER_AUTH, true);

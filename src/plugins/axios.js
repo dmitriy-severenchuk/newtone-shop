@@ -23,7 +23,7 @@ axiosInstance.interceptors.response.use(
 
       setTimeout(() => {
         router.push({
-          name: "login-page",
+          name: "authorization",
         });
       });
     }

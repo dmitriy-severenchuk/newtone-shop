@@ -6,7 +6,7 @@ import VueAxios from "vue-axios";
 import fontawesome from "./plugins/fontawesome";
 import axios from "./plugins/axios";
 import components from "./plugins/ui";
-// import swiper from "./plugins/swiper";
+import "./plugins/swiper";
 
 const app = createApp(App);
 

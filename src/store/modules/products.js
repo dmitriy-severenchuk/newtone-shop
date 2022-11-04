@@ -1,27 +1,28 @@
-import axios from 'axios';
+import axios from "@/plugins/axios";
+import { SET_TO_CART } from "../mutation-types";
 
 export default {
   state: {
     products: [],
     cart: [],
     categories: [
-      { name: 'Все', value: '' },
-      { name: 'Мужчинам', value: 1 },
-      { name: 'Женщинам', value: 2 },
+      { name: "Все", value: "" },
+      { name: "Мужчинам", value: 1 },
+      { name: "Женщинам", value: 2 },
     ],
     filiations: [
       {
-        image: '1.webp',
-        adress: 'г. Киев, ул. Сковороды, д. 5',
-        phone_number: '+380 95 555 1236',
-        timetable: 'пн-пт 10:00-19:00',
+        image: "1.webp",
+        adress: "г. Киев, ул. Сковороды, д. 5",
+        phone_number: "+380 95 555 1236",
+        timetable: "пн-пт 10:00-19:00",
         id: 1,
       },
       {
-        image: '2.webp',
-        adress: 'г. Киев, ул. Политехническая, д. 18, стр. 11',
-        phone_number: '+380 96 712 4256',
-        timetable: 'пн-пт 10:00-20:00',
+        image: "2.webp",
+        adress: "г. Киев, ул. Политехническая, д. 18, стр. 11",
+        phone_number: "+380 96 712 4256",
+        timetable: "пн-пт 10:00-20:00",
         id: 2,
       },
     ],
@@ -36,14 +37,14 @@ export default {
       return state.cart;
     },
     CART_ITEMS_COUNT(state) {
-      Array.prototype.sum = function(prop) {
+      Array.prototype.sum = function (prop) {
         let totalCount = 0;
         for (let i = 0; i < this.length; i++) {
           totalCount += this[i][prop];
         }
         return totalCount;
       };
-      return state.cart.sum('quantity');
+      return state.cart.sum("quantity");
     },
     CART_TOTAL_PRICE(state) {
       let totalPrice = 0;
@@ -68,14 +69,12 @@ export default {
   actions: {
     async GET_PRODUCTS_FROM_API({ commit }) {
       try {
-        const { data } = await axios(
-          'api/products/',
-          {
-            method: 'GET',
-          }
-        );
+        const { data } = await axios({
+          url: "api/products/",
+          method: "GET",
+        });
 
-        commit('SET_PRODUCTS_TO_STATE', data);
+        commit("SET_PRODUCTS_TO_STATE", data);
         return data;
       } catch (e) {
         console.log(e);
@@ -83,29 +82,29 @@ export default {
     },
 
     ADD_TO_CART({ commit }, { product, quantity, size, uniqueCartItemIndex }) {
-      commit('SET_TO_CART', { product, quantity, size, uniqueCartItemIndex });
+      commit(SET_TO_CART, { product, quantity, size, uniqueCartItemIndex });
     },
     СLEAR_CART({ commit }) {
-      commit('CLEAR_CART');
+      commit("CLEAR_CART");
     },
     REMOVE_PRODUCT_FROM_CART({ commit }, uniqueCartItemIndex) {
-      commit('REMOVE_PRODUCT_FROM_CART', uniqueCartItemIndex);
+      commit("REMOVE_PRODUCT_FROM_CART", uniqueCartItemIndex);
     },
 
     INCREMENT_CART_ITEM({ commit }, index) {
-      commit('INCREMENT', index);
+      commit("INCREMENT", index);
     },
     DECREMENT_CART_ITEM({ commit }, index) {
-      commit('DECREMENT', index);
+      commit("DECREMENT", index);
     },
     GET_CART_ITEM_SIZE({ commit }, event) {
-      commit('SET_CART_ITEM_SIZE', event);
+      commit("SET_CART_ITEM_SIZE", event);
     },
     SHOW_PRODUCT_POPUP({ commit }) {
-      commit('CHANGE_POPUP_VALUE');
+      commit("CHANGE_POPUP_VALUE");
     },
     CLOSE_PRODUCT_POPUP({ commit }) {
-      commit('CHANGE_POPUP_VALUE');
+      commit("CHANGE_POPUP_VALUE");
     },
   },
 
@@ -114,7 +113,7 @@ export default {
       state.products = products.data;
     },
 
-    SET_TO_CART: (state, { product, quantity, size, uniqueCartItemIndex }) => {
+    [SET_TO_CART](state, { product, quantity, size, uniqueCartItemIndex }) {
       let productInCart = state.cart.find((cart_item) => {
         return cart_item.product.id === product.id && cart_item.size === size;
       });
