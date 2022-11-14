@@ -5,90 +5,43 @@
 
       <div class="authorization__inner">
         <router-link to="/" class="authorization__logo-wrapper">
-          <img
-            src="@/assets/images/logo.svg"
-            alt="NewTone"
-            class="authorization__logo"
-          />
+          <img src="@/assets/images/logo.svg" alt="NewTone" class="authorization__logo" />
         </router-link>
 
-        <form
-          action="POST"
-          class="authorization__form"
-          @submit.prevent="register"
-        >
+        <form action="POST" class="authorization__form" @submit.prevent="register">
           <h1 class="authorization__title">Регистрация</h1>
           <div class="authorization__form__item">
             <div class="authorization__form__item-title">Имя</div>
-            <input
-              v-model="state.name"
-              type="text"
-              class="authorization__form__item-input"
-              placeholder="Имя"
-            />
-            <span
-              v-if="v$.name.$errors.length"
-              class="authorization__input-error"
-              >Это поле должно быть заполнено</span
-            >
+            <input v-model="state.name" type="text" class="authorization__form__item-input" placeholder="Имя" />
+            <span v-if="v$.name.$errors.length" class="authorization__input-error">Это поле должно быть заполнено</span>
           </div>
           <div class="authorization__form__item">
             <div class="authorization__form__item-title">Фамилия</div>
-            <input
-              v-model="state.surname"
-              type="text"
-              class="authorization__form__item-input"
-              placeholder="Фамилия"
-            />
-            <span
-              v-if="v$.surname.$errors.length"
-              class="authorization__input-error"
-              >Это поле должно быть заполнено</span
-            >
+            <input v-model="state.surname" type="text" class="authorization__form__item-input" placeholder="Фамилия" />
+            <span v-if="v$.surname.$errors.length" class="authorization__input-error">Это поле должно быть
+              заполнено</span>
           </div>
           <div class="authorization__form__item">
             <div class="authorization__form__item-title">Ваша почта:</div>
-            <input
-              v-model="state.email"
-              type="email"
-              class="authorization__form__item-input"
-              placeholder="example@user.net"
-            />
-            <span
-              v-if="v$.email.$errors.length"
-              class="authorization__input-error"
-              >Неверно введена почта</span
-            >
+            <input v-model="state.email" type="email" class="authorization__form__item-input"
+              placeholder="example@user.net" />
+            <span v-if="v$.email.$errors.length" class="authorization__input-error">Неверно введена почта</span>
           </div>
           <div class="authorization__form__item">
             <div class="authorization__form__item-title">Пароль:</div>
-            <input
-              v-model="state.password"
-              type="password"
-              class="authorization__form__item-input"
-              placeholder="Пароль"
-            />
-            <span
-              v-if="v$.password.$errors.length"
-              class="authorization__input-error"
-              >Неверный пароль (мин. 6 символов)</span
-            >
+            <input v-model="state.password" type="password" class="authorization__form__item-input"
+              placeholder="Пароль" />
+            <span v-if="v$.password.$errors.length" class="authorization__input-error">Неверный пароль (мин. 6
+              символов)</span>
           </div>
           <div class="authorization__form__item">
             <div class="authorization__form__item-title">
               Подтвердите пароль:
             </div>
-            <input
-              v-model="state.password_confirm"
-              type="password"
-              class="authorization__form__item-input"
-              placeholder="Подтвердите пароль"
-            />
-            <span
-              v-if="v$.password_confirm.$errors.length"
-              class="authorization__input-error"
-              >Пароль не совпадает</span
-            >
+            <input v-model="state.password_confirm" type="password" class="authorization__form__item-input"
+              placeholder="Подтвердите пароль" />
+            <span v-if="v$.password_confirm.$errors.length" class="authorization__input-error">Пароль не
+              совпадает</span>
           </div>
           <button class="authorization__form__button" type="submit">
             Зарегистрироваться

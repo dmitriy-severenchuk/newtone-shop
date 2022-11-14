@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import AuthHeader from "@/components/Authorization/Auth-Header";
+import AuthHeader from "@/components/Authorization/AuthHeader";
 
 export default {
   components: {
@@ -17,4 +17,6 @@ export default {
 };
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+
+</style>

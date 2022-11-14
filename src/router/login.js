@@ -1,16 +1,16 @@
-import store from "../store";
-import AuthorizationLayout from "@/layouts/AuthorizationLayout";
+import store from '../store';
+import AuthorizationLayout from '@/layouts/AuthorizationLayout';
 
 export default {
-  path: "/",
-  name: "authorization",
+  path: '/',
+  name: 'authorization',
   component: AuthorizationLayout,
   beforeEnter: (to, from, next) => {
-    const isLogged = store.getters["getIsLogin"];
+    const isLogged = store.getters['getIsLogin'];
 
     if (isLogged) {
       next({
-        name: "content",
+        name: 'content',
       });
     } else {
       next();
@@ -18,19 +18,19 @@ export default {
   },
 
   redirect: {
-    name: "authorization.login",
+    name: 'authorization.login',
   },
 
   children: [
     {
-      path: "/login",
-      name: "authorization.login",
-      component: () => import("@/views/Login-view.vue"),
+      path: '/login',
+      name: 'authorization.login',
+      component: () => import('@/views/LoginView.vue'),
     },
     {
-      path: "/register",
-      name: "authorization.register",
-      component: () => import("@/views/Register-view.vue"),
+      path: '/register',
+      name: 'authorization.register',
+      component: () => import('@/views/RegisterView.vue'),
     },
   ],
 };

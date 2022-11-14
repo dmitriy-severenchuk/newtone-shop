@@ -1,14 +1,14 @@
-import { createRouter, createWebHistory } from "vue-router";
-import store from "../store";
-import Content from "./content";
-import Login from "./login";
+import { createRouter, createWebHistory } from 'vue-router';
+import store from '../store';
+import Content from './content';
+import Login from './login';
 
 const routes = [
   {
-    path: "/",
-    name: "index",
+    path: '/',
+    name: 'index',
     beforeEnter: (to, form, next) => {
-      store.dispatch("checkUserLogin");
+      store.dispatch('checkUserLogin');
 
       next();
     },

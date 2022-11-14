@@ -4,7 +4,7 @@
       <div class="cart__header">
         <h2 class="cart__title">Корзина</h2>
         <div class="cart__total-price">
-          <strong>Итого:</strong> {{ CART_TOTAL_PRICE/100 }} грн
+          <strong>Итого:</strong> {{ CART_TOTAL_PRICE / 100 }} грн
         </div>
       </div>
       <div class="cart__inner">
@@ -17,7 +17,7 @@
 </template>
 
 <script>
-import CartItem from '@/components/Cart-item';
+import CartItem from '@/components/CartItem';
 import { mapGetters, mapActions } from 'vuex';
 
 export default {

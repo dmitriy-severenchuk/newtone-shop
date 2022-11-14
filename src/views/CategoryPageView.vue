@@ -1,14 +1,15 @@
 <template>
   <div>
-    <UserPage />
+    <CategoryPage />
   </div>
 </template>
 
 <script>
-import UserPage from '@/components/User-page.vue';
+import CategoryPage from '@/components/CategoryPage.vue';
+
 export default {
   components: {
-    UserPage,
+    CategoryPage,
   },
 };
 </script>
