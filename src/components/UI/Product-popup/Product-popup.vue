@@ -14,30 +14,30 @@
 </template>
 
 <script>
-import { mapGetters, mapActions } from 'vuex';
+import { mapGetters, mapActions } from "vuex";
 
 export default {
-  name: 'product-popup',
+  name: "product-popup",
+
   data() {
     return {};
   },
   computed: {
-    ...mapGetters(['GET_POPUP']),
+    ...mapGetters(["GET_POPUP"]),
   },
   methods: {
-    ...mapActions(['CLOSE_PRODUCT_POPUP']),
+    ...mapActions(["CLOSE_PRODUCT_POPUP"]),
     closePopup() {
       this.CLOSE_PRODUCT_POPUP();
     },
-    
   },
-  mounted(){
-    document.addEventListener('click', (item) => {
-      if(item.target === this.$refs['popup__wrapper']){
+  mounted() {
+    document.addEventListener("click", (item) => {
+      if (item.target === this.$refs["popup__wrapper"]) {
         this.CLOSE_PRODUCT_POPUP();
       }
-    })
-  }
+    });
+  },
 };
 </script>
 

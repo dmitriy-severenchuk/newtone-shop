@@ -1,23 +1,31 @@
 <template>
   <div class="main-wrapper">
-    <theHeader />
+    <TheHeader />
     <div class="main-wrapper__content" v-if="isReady">
       <router-view />
     </div>
-    <theFooter />
+    <TheFooter />
   </div>
 </template>
 
 <script>
-import { mapActions } from 'vuex';
+import TheHeader from "@/components/TheHeader";
+import TheFooter from "@/components/TheFooter";
+import { mapActions } from "vuex";
+
 export default {
+  components: {
+    TheHeader,
+    TheFooter,
+  },
+
   data() {
     return {
       isReady: false,
     };
   },
   methods: {
-    ...mapActions(['GET_PRODUCTS_FROM_API']),
+    ...mapActions(["GET_PRODUCTS_FROM_API"]),
 
     async initProducts() {
       await this.GET_PRODUCTS_FROM_API();

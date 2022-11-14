@@ -22,7 +22,7 @@
       <div class="header__footer">
         <div class="header__footer-menu">
           <router-link :to="{
-            name: 'categoryPage',
+            name: 'content.category',
             params: { category: 'Женщинам' },
           }" class="header__footer-menu__title">Женщинам<span class="header__footer-menu__title-icon">
               <fa icon="caret-down" />
@@ -31,19 +31,19 @@
             <ul class="header__footer-menu__content__main">
               <li class="header__footer-menu__content__main__item">
                 <router-link :to="{
-                  name: 'typePage',
+                  name: 'content.category.type',
                   params: { category: 'Женщинам', type: 'Одежда' },
                 }" class="header__footer-menu__content__main__item-link">Одежда</router-link>
               </li>
               <li class="header__footer-menu__content__main__item">
                 <router-link :to="{
-                  name: 'typePage',
+                  name: 'content.category.type',
                   params: { category: 'Женщинам', type: 'Обувь' },
                 }" class="header__footer-menu__content__main__item-link">Обувь</router-link>
               </li>
               <li class="header__footer-menu__content__main__item">
                 <router-link :to="{
-                  name: 'typePage',
+                  name: 'content.category.type',
                   params: { category: 'Женщинам', type: 'Аксессуары' },
                 }" class="header__footer-menu__content__main__item-link">Аксессуары</router-link>
               </li>
@@ -52,7 +52,7 @@
         </div>
         <div class="header__footer-menu">
           <router-link :to="{
-            name: 'categoryPage',
+            name: 'content.category',
             params: { category: 'Мужчинам' },
           }" class="header__footer-menu__title">Мужчинам<span class="header__footer-menu__title-icon">
               <fa icon="caret-down" />
@@ -61,7 +61,7 @@
             <ul class="header__footer-menu__content__main">
               <li class="header__footer-menu__content__main__item">
                 <router-link :to="{
-                  name: 'typePage',
+                  name: 'content.category.type',
                   params: { category: 'Мужчинам', type: 'Одежда' },
                 }" class="header__footer-menu__content__main__item-link">
                   Одежда
@@ -69,13 +69,13 @@
               </li>
               <li class="header__footer-menu__content__main__item">
                 <router-link :to="{
-                  name: 'typePage',
+                  name: 'content.category.type',
                   params: { category: 'Мужчинам', type: 'Обувь' },
                 }" class="header__footer-menu__content__main__item-link">Обувь</router-link>
               </li>
               <li class="header__footer-menu__content__main__item">
                 <router-link :to="{
-                  name: 'typePage',
+                  name: 'content.category.type',
                   params: { category: 'Мужчинам', type: 'Аксессуары' },
                 }" class="header__footer-menu__content__main__item-link">Аксессуары</router-link>
               </li>
