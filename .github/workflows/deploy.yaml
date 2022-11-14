@@ -24,4 +24,4 @@ jobs:
 
             docker stop newtone-shop-app
             docker build -t newtone-shop .
-            docker run -p 8080:80 --rm --name newtone-shop-app newtone-shop
+            docker run -d -p 8080:80 --rm --name newtone-shop-app newtone-shop
