@@ -1,5 +1,5 @@
 # develop stage
-FROM node:latest as develop-stage
+FROM node:16.3.0-alpine as develop-stage
 WORKDIR /app
 COPY package*.json ./
 RUN yarn install
