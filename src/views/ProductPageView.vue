@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import ProductPage from '@/components/ProductPage.vue';
+import ProductPage from '@/components/ProductPage';
 
 export default {
   components: {

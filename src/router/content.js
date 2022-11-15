@@ -11,7 +11,7 @@ export default {
 
   children: [
     {
-      path: '/home',
+      path: '/',
       name: 'content.home',
       component: () => import('@/views/HomeView.vue'),
     },

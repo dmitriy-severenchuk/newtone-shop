@@ -2,100 +2,63 @@
   <div class="product-page__wrapper">
     <transition name="popup__appear">
       <product-popup>
-        <product-popup-main
-          :popup_data="currentPopupItem"
-          :popupItemSize="cardProductSize"
-        />
+        <product-popup-main :popup_data="currentPopupItem" :popupItemSize="cardProductSize" />
       </product-popup>
     </transition>
     <div class="container">
       <div class="product-page__inner">
         <div class="product-page__flex-wrapper">
-          <div
-            class="product-page__image-wrapper"
-            :style="{
-              'background-image': 'url(' + getItemFromProducts.image + ')',
-            }"
-          >
-            <div
-              class="product-page__sale"
-              id="sale"
-              v-if="getItemFromProducts.sale"
-            >
+          <div class="product-page__image-wrapper" :style="{
+            'background-image': 'url(' + getItemFromProducts.image + ')',
+          }">
+            <div class="product-page__sale" id="sale" v-if="getItemFromProducts.sale">
               -{{ getItemFromProducts.sale }}%
             </div>
           </div>
           <div class="product-page__content-box">
             <h1 class="product-page__title">{{ getItemFromProducts.title }}</h1>
             <div class="product-page__price-wrapper">
-              <span class="product-page__price"
-                >{{
+              <span class="product-page__price">{{
                   (getItemFromProducts.price / 100) * productItemQuantity
-                }}
-                грн</span
-              >
-              <span
-                class="product-page__old-price"
-                v-if="getItemFromProducts.sale_old_price"
-              >
+              }}
+                грн</span>
+              <span class="product-page__old-price" v-if="getItemFromProducts.sale_old_price">
                 {{
-                  (getItemFromProducts.sale_old_price / 100) *
-                  productItemQuantity
+                    (getItemFromProducts.sale_old_price / 100) *
+                    productItemQuantity
                 }}
-                грн</span
-              >
+                грн</span>
             </div>
 
             <div class="product-page__size">
-              <div
-                class="product-page__size-item"
-                :class="{ 'active-size': productSize == 'S' }"
-                @click="clickOnSizeButton($event)"
-              >
+              <div class="product-page__size-item" :class="{ 'active-size': productSize == 'S' }"
+                @click="clickOnSizeButton($event)">
                 S
               </div>
-              <div
-                class="product-page__size-item"
-                :class="{ 'active-size': productSize == 'M' }"
-                @click="clickOnSizeButton($event)"
-              >
+              <div class="product-page__size-item" :class="{ 'active-size': productSize == 'M' }"
+                @click="clickOnSizeButton($event)">
                 M
               </div>
-              <div
-                class="product-page__size-item"
-                :class="{ 'active-size': productSize == 'L' }"
-                @click="clickOnSizeButton($event)"
-              >
+              <div class="product-page__size-item" :class="{ 'active-size': productSize == 'L' }"
+                @click="clickOnSizeButton($event)">
                 L
               </div>
-              <div
-                class="product-page__size-item"
-                :class="{ 'active-size': productSize == 'XL' }"
-                @click="clickOnSizeButton($event)"
-              >
+              <div class="product-page__size-item" :class="{ 'active-size': productSize == 'XL' }"
+                @click="clickOnSizeButton($event)">
                 XL
               </div>
             </div>
             <div class="product-page__add-to-cart__wrapper">
-              <section
-                class="product-page__add-to-cart__section"
-                v-if="!productAlreadyInCart"
-              >
+              <section class="product-page__add-to-cart__section" v-if="!productAlreadyInCart">
                 <div class="product-page__counter">
                   <div class="product-page__counter__wrapper">
-                    <button
-                      class="product-page__counter__button"
-                      @click="decrementproductItemQuantity()"
-                    >
+                    <button class="product-page__counter__button" @click="decrementproductItemQuantity()">
                       −
                     </button>
                     <span class="product-page__counter__quantity">
                       {{ productItemQuantity }}
                     </span>
-                    <button
-                      class="product-page__counter__button"
-                      @click="incrementproductItemQuantity()"
-                    >
+                    <button class="product-page__counter__button" @click="incrementproductItemQuantity()">
                       +
                     </button>
                   </div>
@@ -105,19 +68,12 @@
                 </button>
               </section>
               <!-- Section Shows when Product in Cart -->
-              <section
-                class="product-page__add-to-cart__section"
-                v-if="productAlreadyInCart"
-              >
-                <router-link :to="{ name: 'cart' }">
+              <section class="product-page__add-to-cart__section" v-if="productAlreadyInCart">
+                <router-link :to="{ name: 'content.cart' }">
                   <div class="product-page__route-to-cart__button">
-                    <span class="product-page__route-to-cart__button__text"
-                      >Перейти в Корзину
+                    <span class="product-page__route-to-cart__button__text">Перейти в Корзину
                     </span>
-                    <fa
-                      icon="check"
-                      class="product-page__route-to-cart__button__icon"
-                    />
+                    <fa icon="check" class="product-page__route-to-cart__button__icon" />
                   </div>
                 </router-link>
               </section>
@@ -160,21 +116,10 @@
               <h2 class="product-page__catalog__title">
                 Рекомендуемое для вас
               </h2>
-              <swiper
-                :slides-per-view="5"
-                :space-between="20"
-                :navigation="{ clickable: true }"
-                :breakpoints="swiperOptions.breakpoints"
-              >
-                <swiper-slide
-                  v-for="(product, id) in filteredProducts"
-                  :key="id"
-                >
-                  <Card
-                    :product_data="product"
-                    @chosenItemSize="getItemSizeFromCard"
-                    @popup_data="GetPopupData(id)"
-                  />
+              <swiper :slides-per-view="5" :space-between="20" :navigation="{ clickable: true }"
+                :breakpoints="swiperOptions.breakpoints">
+                <swiper-slide v-for="(product, id) in filteredProducts" :key="id">
+                  <Card :product_data="product" @chosenItemSize="getItemSizeFromCard" @popup_data="GetPopupData(id)" />
                 </swiper-slide>
               </swiper>
             </div>
@@ -257,7 +202,7 @@ export default {
       });
     },
     getItemFromProducts: function () {
-      return this.PRODUCTS.find((item) => item.id === this.$route.params.id);
+      return this.PRODUCTS.find((item) => item.id === this.$route.params.productId);
     },
   },
   methods: {
@@ -298,7 +243,6 @@ export default {
   },
   beforeMount() {
     this.getItemSizeFromCard();
-    console.log(this.getItemFromProducts);
   },
 };
 </script>
